@@ -42,7 +42,7 @@ function FocusOnSelected({ items, selectedId }: { items: ForecastItem[]; selecte
     const selected = items.find((item) => item.site.id === selectedId);
     if (!selected) return;
     const currentZoom = map.getZoom();
-    const targetZoom = Math.min(11, Math.max(10, currentZoom));
+    const targetZoom = Math.min(12, currentZoom + 1);
     map.flyTo([selected.site.lat, selected.site.lon], targetZoom, { duration: 0.5 });
   }, [items, map, selectedId]);
 
