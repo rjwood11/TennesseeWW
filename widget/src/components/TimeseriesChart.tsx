@@ -276,7 +276,9 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
   return (
     <div className="tnww-timeseries">
       <div className="tnww-timeseries-head">
-        <h4>E. coli Through Time: {siteName}</h4>
+        <h4>
+          <em>E. coli</em> Through Time: {siteName}
+        </h4>
         {SHOW_MODEL_OVERLAY_TOGGLE && (
           <button type="button" className="tnww-toggle" onClick={() => setShowPredicted((prev) => !prev)}>
             {showPredicted ? "Hide Model Overlay" : "Show Model Overlay"}
@@ -430,7 +432,7 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
             ))}
 
             <text x={left / 2} y={top + plotHeight / 2} textAnchor="middle" className="tnww-axis-title" transform={`rotate(-90 ${left / 2} ${top + plotHeight / 2})`}>
-              E. coli (MPN/100 mL)
+              <tspan fontStyle="italic">E. coli</tspan> (MPN/100 mL)
             </text>
             <text x={left + plotWidth / 2} y={height - 4} textAnchor="middle" className="tnww-axis-title">
               Date

@@ -43,14 +43,22 @@ export default function SiteDetailsDrawer({ item }: Props) {
         <strong>Status:</strong> {item.status}
       </p>
       <p>
-        <strong>Predicted E. coli:</strong> {item.pred_ecoli ?? "n/a"}
+        <strong>
+          Predicted <em>E. coli</em>:
+        </strong>{" "}
+        {item.pred_ecoli ?? "n/a"}
       </p>
       <p>
         <strong>Most Recent Sample:</strong> {formatSampleDate(item.sample_date)}: {formatSampleValue(item.sample_value)} CFUs
       </p>
       <div className="tnww-drivers">
-        <h4>Drivers</h4>
-        <p>Gage Flow: {val(asNumber(item.drivers.flow))} cfs - {flowRating(item.drivers.flow_rating)}</p>
+        <h4>Site Details:</h4>
+        <p>
+          Gage Flow: {val(asNumber(item.drivers.flow))} cfs -{" "}
+          <strong>
+            <em>{flowRating(item.drivers.flow_rating)}</em>
+          </strong>
+        </p>
         <p>Gage Height: {val(asNumber(item.drivers.gage))} ft</p>
         <p>Rain (Past 24 Hours): {val(asNumber(item.drivers.rain_1d))} in</p>
       </div>
