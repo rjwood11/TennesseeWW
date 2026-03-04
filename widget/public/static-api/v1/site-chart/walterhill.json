@@ -148,10 +148,156 @@
       "status": "Safe"
     }
   ],
-  "predicted": [],
+  "predicted": [
+    {
+      "sample_date": "2024-06-11",
+      "pred_ecoli": 217,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-06-18",
+      "pred_ecoli": 288,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2024-06-25",
+      "pred_ecoli": 76,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-09",
+      "pred_ecoli": 344,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2024-07-17",
+      "pred_ecoli": 467,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2024-07-23",
+      "pred_ecoli": 622,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2024-07-30",
+      "pred_ecoli": 486,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2024-08-06",
+      "pred_ecoli": 276,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2024-08-13",
+      "pred_ecoli": 158,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-20",
+      "pred_ecoli": 77,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-27",
+      "pred_ecoli": -74,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-03",
+      "pred_ecoli": 93,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-24",
+      "pred_ecoli": 514,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2024-10-01",
+      "pred_ecoli": 2295,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2024-10-08",
+      "pred_ecoli": 126,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-10-15",
+      "pred_ecoli": 130,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-10-22",
+      "pred_ecoli": 32,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-06-03",
+      "pred_ecoli": 152,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-06-09",
+      "pred_ecoli": 559,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-06-16",
+      "pred_ecoli": 577,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-06-23",
+      "pred_ecoli": 328,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2025-06-30",
+      "pred_ecoli": 535,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-07-07",
+      "pred_ecoli": 368,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-07-14",
+      "pred_ecoli": 393,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-07-21",
+      "pred_ecoli": 923,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-08-04",
+      "pred_ecoli": 385,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-08-18",
+      "pred_ecoli": 31,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-25",
+      "pred_ecoli": -127,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-29",
+      "pred_ecoli": 376,
+      "status": "Caution"
+    }
+  ],
   "thresholds": {
-    "safe": 235,
-    "advisory": 350,
-    "caution": 750
+    "safe": 235.0,
+    "advisory": 350.0,
+    "caution": 750.0
   }
 }

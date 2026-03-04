@@ -62,7 +62,7 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
     setError(null);
     fetchSiteChart(apiBase, siteId, {
       days: 5000,
-      includePredictions: showPredicted,
+      includePredictions: true,
     })
       .then((data) => {
         if (!alive) return;
@@ -90,7 +90,7 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
     return () => {
       alive = false;
     };
-  }, [apiBase, siteId, showPredicted]);
+  }, [apiBase, siteId]);
 
   useEffect(() => {
     if (startDate > endDate) {

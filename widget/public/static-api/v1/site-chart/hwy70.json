@@ -393,10 +393,401 @@
       "status": "Safe"
     }
   ],
-  "predicted": [],
+  "predicted": [
+    {
+      "sample_date": "2020-08-12",
+      "pred_ecoli": 80,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2020-08-19",
+      "pred_ecoli": 125,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2020-09-03",
+      "pred_ecoli": 1464,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2020-09-24",
+      "pred_ecoli": 240,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2020-10-08",
+      "pred_ecoli": 85,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2020-10-29",
+      "pred_ecoli": 1014,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2021-07-06",
+      "pred_ecoli": 30,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-07-13",
+      "pred_ecoli": 132,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-07-20",
+      "pred_ecoli": 187,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-07-27",
+      "pred_ecoli": 139,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-08-03",
+      "pred_ecoli": 188,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-08-10",
+      "pred_ecoli": 13,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-08-17",
+      "pred_ecoli": 285,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2021-08-24",
+      "pred_ecoli": 801,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2021-09-07",
+      "pred_ecoli": 452,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2021-09-14",
+      "pred_ecoli": 130,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-09-28",
+      "pred_ecoli": 790,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2021-10-05",
+      "pred_ecoli": 503,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2021-10-26",
+      "pred_ecoli": 794,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2022-05-31",
+      "pred_ecoli": 390,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2022-06-07",
+      "pred_ecoli": 225,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-06-14",
+      "pred_ecoli": 192,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-06-21",
+      "pred_ecoli": 94,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-06-28",
+      "pred_ecoli": 49,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-07-12",
+      "pred_ecoli": 121,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-07-19",
+      "pred_ecoli": 106,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-07-26",
+      "pred_ecoli": 35,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-08-16",
+      "pred_ecoli": 133,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-08-23",
+      "pred_ecoli": 205,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-08-30",
+      "pred_ecoli": 264,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2022-09-13",
+      "pred_ecoli": 207,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-09-20",
+      "pred_ecoli": 56,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-05-30",
+      "pred_ecoli": 200,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-06-06",
+      "pred_ecoli": 123,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-06-13",
+      "pred_ecoli": 89,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-06-20",
+      "pred_ecoli": 131,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-06-27",
+      "pred_ecoli": 77,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-07-11",
+      "pred_ecoli": 249,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2023-07-25",
+      "pred_ecoli": 467,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2023-08-01",
+      "pred_ecoli": 133,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-08-22",
+      "pred_ecoli": 181,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-08-29",
+      "pred_ecoli": 272,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2023-09-05",
+      "pred_ecoli": 52,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-09-12",
+      "pred_ecoli": 14,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-06-11",
+      "pred_ecoli": 322,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2024-06-18",
+      "pred_ecoli": 184,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-06-25",
+      "pred_ecoli": 122,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-06-25",
+      "pred_ecoli": 122,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-02",
+      "pred_ecoli": 52,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-09",
+      "pred_ecoli": 7,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-16",
+      "pred_ecoli": -21,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-23",
+      "pred_ecoli": 295,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2024-07-30",
+      "pred_ecoli": 732,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2024-08-06",
+      "pred_ecoli": 128,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-13",
+      "pred_ecoli": 21,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-20",
+      "pred_ecoli": 138,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-27",
+      "pred_ecoli": -22,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-03",
+      "pred_ecoli": 85,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-10",
+      "pred_ecoli": -10,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-17",
+      "pred_ecoli": 57,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-24",
+      "pred_ecoli": 6,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-10-02",
+      "pred_ecoli": 726,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2024-10-08",
+      "pred_ecoli": 201,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-10-15",
+      "pred_ecoli": 71,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-10-22",
+      "pred_ecoli": 44,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-06-04",
+      "pred_ecoli": 647,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-06-09",
+      "pred_ecoli": 1514,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-16",
+      "pred_ecoli": 1735,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-23",
+      "pred_ecoli": 1063,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-30",
+      "pred_ecoli": 864,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-07-08",
+      "pred_ecoli": 415,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-07-14",
+      "pred_ecoli": 199,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-07-20",
+      "pred_ecoli": 1324,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-07-28",
+      "pred_ecoli": 212,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-03",
+      "pred_ecoli": 70,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-12",
+      "pred_ecoli": 29,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-18",
+      "pred_ecoli": 85,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-25",
+      "pred_ecoli": 3,
+      "status": "Safe"
+    }
+  ],
   "thresholds": {
-    "safe": 235,
-    "advisory": 350,
-    "caution": 750
+    "safe": 235.0,
+    "advisory": 350.0,
+    "caution": 750.0
   }
 }
