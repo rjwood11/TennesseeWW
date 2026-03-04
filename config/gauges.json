@@ -1,0 +1,12 @@
+[
+  {"id":"g_hwy100","label":"Hwy100","usgs_site_no":"03433500"},
+  {"id":"g_hwy70","label":"Hwy70","usgs_site_no":"03434500"},
+  {"id":"g_jblvd","label":"JBlvd","usgs_site_no":"03431700"},
+  {"id":"g_lpike","label":"LPike","usgs_site_no":"03432350"},
+  {"id":"g_mcreek","label":"MCreek","usgs_site_no":"03431060"},
+  {"id":"g_browns","label":"Browns","usgs_site_no":"03431300"},
+  {"id":"g_whites","label":"Whites","usgs_site_no":"03431599"},
+  {"id":"g_cumberland","label":"Cumberland","usgs_site_no":"03431500"},
+  {"id":"g_stones","label":"Stones","usgs_site_no":"03430200"},
+  {"id":"g_duck","label":"Duck","usgs_site_no":"03601990"}
+]

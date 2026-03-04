@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: tnww-api
+Version: 0.1.0
+Summary: TNWW v3 API
+Requires-Python: >=3.11
+Requires-Dist: fastapi>=0.115.0
+Requires-Dist: uvicorn[standard]>=0.30.0
+Requires-Dist: pydantic>=2.8.0
+Requires-Dist: httpx>=0.27.0
+Requires-Dist: pandas>=2.2.0
+Requires-Dist: numpy>=2.0.0
+Requires-Dist: PyYAML>=6.0.0
+Requires-Dist: APScheduler>=3.10.0
+Requires-Dist: openpyxl>=3.1.0
+Requires-Dist: python-dateutil>=2.9.0

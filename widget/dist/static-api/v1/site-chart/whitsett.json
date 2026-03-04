@@ -1,0 +1,182 @@
+{
+  "site_id": "whitsett",
+  "days": 1095,
+  "measured": [
+    {
+      "sample_date": "2023-06-06",
+      "sample_value": 70.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-07-10",
+      "sample_value": 93.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-08-22",
+      "sample_value": 74.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-09-12",
+      "sample_value": 27.2,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-06-12",
+      "sample_value": 111.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-06-19",
+      "sample_value": 290.9,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2024-06-26",
+      "sample_value": 116.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-02",
+      "sample_value": 118.7,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-09",
+      "sample_value": 387.3,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2024-07-17",
+      "sample_value": 38.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-23",
+      "sample_value": 115.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-31",
+      "sample_value": 4839.2,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2024-08-06",
+      "sample_value": 129.6,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-14",
+      "sample_value": 34.1,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-21",
+      "sample_value": 51.2,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-28",
+      "sample_value": 148.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-04",
+      "sample_value": 428.4,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2024-09-11",
+      "sample_value": 172.5,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-06-02",
+      "sample_value": 488.4,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-06-10",
+      "sample_value": 2419.6,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-16",
+      "sample_value": 1553.1,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-23",
+      "sample_value": 360.9,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-06-30",
+      "sample_value": 1986.3,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-07-07",
+      "sample_value": 214.2,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-07-14",
+      "sample_value": 2419.6,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-07-21",
+      "sample_value": 340.45454545454544,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2025-07-28",
+      "sample_value": 365.4,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-08-05",
+      "sample_value": 98.5,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-11",
+      "sample_value": 166.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-20",
+      "sample_value": 51.2,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-25",
+      "sample_value": 81.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-08",
+      "sample_value": 186.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-17",
+      "sample_value": 109.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-29",
+      "sample_value": 123.6,
+      "status": "Safe"
+    }
+  ],
+  "predicted": [],
+  "thresholds": {
+    "safe": 235,
+    "advisory": 350,
+    "caution": 750
+  }
+}

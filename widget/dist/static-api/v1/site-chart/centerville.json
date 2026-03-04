@@ -1,0 +1,142 @@
+{
+  "site_id": "centerville",
+  "days": 1095,
+  "measured": [
+    {
+      "sample_date": "2024-07-16",
+      "sample_value": 21.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-23",
+      "sample_value": 248.9,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2024-07-30",
+      "sample_value": 18.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-27",
+      "sample_value": 7.2,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-03",
+      "sample_value": 150.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-10",
+      "sample_value": 21.1,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-24",
+      "sample_value": 72.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-10-01",
+      "sample_value": 71.7,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-10-08",
+      "sample_value": 34.1,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-10-22",
+      "sample_value": 24.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-06-01",
+      "sample_value": 1986.3,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-08",
+      "sample_value": 191.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-06-16",
+      "sample_value": 547.5,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-06-22",
+      "sample_value": 238.2,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2025-06-29",
+      "sample_value": 1553.1,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-07-06",
+      "sample_value": 10.7,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-07-13",
+      "sample_value": 30.1,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-07-20",
+      "sample_value": 186.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-07-27",
+      "sample_value": 14.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-03",
+      "sample_value": 33.6,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-10",
+      "sample_value": 52.1,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-24",
+      "sample_value": 9.7,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-07",
+      "sample_value": 248.1,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2025-09-14",
+      "sample_value": 72.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-21",
+      "sample_value": 17.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-28",
+      "sample_value": 461.1,
+      "status": "Caution"
+    }
+  ],
+  "predicted": [],
+  "thresholds": {
+    "safe": 235,
+    "advisory": 350,
+    "caution": 750
+  }
+}

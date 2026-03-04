@@ -1,0 +1,152 @@
+﻿version: 1
+# TNWW model config notes:
+# - This is the only file you should edit to change model behavior.
+# - One model key must exist for every site id in config/sites.json.
+# - Currently supported model_type values:
+#   - formula: evaluates the expression string with the safe evaluator.
+# - Set enabled: false and expression: "null" to disable a model.
+#
+# FULL list of allowed predictor variables (for required + expression):
+# - flow
+# - gage
+# - rain_1d
+# - rain_2d
+# - rain_3d
+# - rain_5d
+# - rain_7d
+# - sindoy
+# - temp_24h_mean
+# - temp_24h_min
+# - temp_24h_max
+# - relative_humidity_24h_mean
+# - relative_humidity_24h_min
+# - relative_humidity_24h_max
+# - dew_point_24h_mean
+# - dew_point_24h_min
+# - dew_point_24h_max
+# - apparent_temp_24h_mean
+# - apparent_temp_24h_min
+# - apparent_temp_24h_max
+# - pressure_msl_24h_mean
+# - pressure_msl_24h_min
+# - pressure_msl_24h_max
+# - surface_pressure_24h_mean
+# - surface_pressure_24h_min
+# - surface_pressure_24h_max
+# - cloud_cover_24h_mean
+# - cloud_cover_24h_min
+# - cloud_cover_24h_max
+# - wind_speed_24h_mean
+# - wind_speed_24h_min
+# - wind_speed_24h_max
+# - wind_gust_24h_mean
+# - wind_gust_24h_min
+# - wind_gust_24h_max
+#
+# Copy/paste required example (all predictors):
+# required: [flow, gage, rain_1d, rain_2d, rain_3d, rain_5d, rain_7d, sindoy, temp_24h_mean, temp_24h_min, temp_24h_max, relative_humidity_24h_mean, relative_humidity_24h_min, relative_humidity_24h_max, dew_point_24h_mean, dew_point_24h_min, dew_point_24h_max, apparent_temp_24h_mean, apparent_temp_24h_min, apparent_temp_24h_max, pressure_msl_24h_mean, pressure_msl_24h_min, pressure_msl_24h_max, surface_pressure_24h_mean, surface_pressure_24h_min, surface_pressure_24h_max, cloud_cover_24h_mean, cloud_cover_24h_min, cloud_cover_24h_max, wind_speed_24h_mean, wind_speed_24h_min, wind_speed_24h_max, wind_gust_24h_mean, wind_gust_24h_min, wind_gust_24h_max]
+#
+# Allowed expression functions:
+# - ln(x), log10(x), exp(x), sqrt(x), abs(x), min(a,b), max(a,b)
+# Allowed operators:
+# - +, -, *, /, ^, parentheses
+# Not allowed:
+# - imports, attribute access, indexing, lambdas, or arbitrary code
+defaults:
+  thresholds:
+    safe: 235
+    advisory: 350
+    caution: 750
+  units:
+    ecoli: "MPN/100 mL"
+  # Rain unit for expressions: inches
+  # Flow unit: USGS discharge in cfs (as returned by NWIS IV)
+  # Gage unit: feet (as returned by NWIS IV)
+models:
+  # TNWW v2 models (from app.R). Enable these by default:
+  hwy100:
+    enabled: true
+    model_type: formula
+    required: [flow, gage, rain_2d, sindoy]
+    expression: "207.2 + 0.06577*(flow*rain_2d) - 61.21*(sindoy*gage)"
+
+  hwy70:
+    enabled: true
+    model_type: formula
+    required: [flow, rain_2d]
+    expression: "-79.38 + 1.002*(flow + rain_2d)"
+
+  jackson:
+    enabled: true
+    model_type: formula
+    required: [flow]
+    # v2 uses natural log (R log()) and constant 17.2
+    expression: "17.2 + 164.2*ln(flow)"
+
+  lewisburg:
+    enabled: true
+    model_type: formula
+    required: [flow, rain_2d, sindoy]
+    expression: "294.9 - 115.9*sindoy + 3.068e-05*((flow*rain_2d)^2)"
+
+  millgreenway:
+    enabled: true
+    model_type: formula
+    required: [flow, rain_2d]
+    expression: "-15.33 + 5.972*(flow + rain_2d)"
+
+  moran:
+    enabled: true
+    model_type: formula
+    required: [flow, gage, sindoy]
+    # v2 uses sindoy directly (not sqrt)
+    expression: "170.9 + 0.5829*(flow*gage) - 97.66*sindoy"
+
+  richland:
+    enabled: true
+    model_type: formula
+    required: [flow, rain_1d]
+    expression: "-191.8 + 851.4*log10(rain_1d + flow)"
+
+  whitsett:
+    enabled: true
+    model_type: formula
+    required: [flow, rain_2d]
+    expression: "7.295 + 6.334*(flow + rain_2d)"
+
+  # The rest were placeholders in v2; ship as “NO_MODEL” until you add them.
+  browns:
+    enabled: true
+    model_type: formula
+    required: [flow,rain_2d]
+    expression: "601.1 - 0.1464*(flow^2) + 257.9*(rain_2d)"
+
+  whites:
+    enabled: true
+    model_type: formula
+    required: [rain_2d, ]
+    expression: "-335.7 + 26.93*(wind_gust_24h_mean) + 587.4*(rain_2d^2)"
+
+  cumberland:
+    enabled: true
+    model_type: formula
+    required: [flow, wind_speed_24h_mean]
+    expression: "-116.3 + 3070*(1/(wind_speed_24h_mean * 3.3125)) + 0.006913*(flow)"
+
+  walterhill:
+    enabled: true
+    model_type: formula
+    required: [flow, relative_humidity_24h_mean]
+    expression: "-865 + 5.891e-05*(flow^2) + 15.58*(relative_humidity_24h_mean)"
+
+  centerville:
+    enabled: true
+    model_type: formula
+    required: [flow, temp_24h_mean]
+    expression: "179.1 - 0.4369*(temp_24h_mean^2) + 0.2326*(flow)"
+
+  cottonwood:
+    enabled: true
+    model_type: formula
+    required: [flow]
+    expression: "-6.862 + 1.851*(flow)"

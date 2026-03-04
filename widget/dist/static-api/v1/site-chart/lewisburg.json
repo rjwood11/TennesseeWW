@@ -1,0 +1,212 @@
+{
+  "site_id": "lewisburg",
+  "days": 1095,
+  "measured": [
+    {
+      "sample_date": "2023-05-30",
+      "sample_value": 155.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-06-13",
+      "sample_value": 209.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-06-27",
+      "sample_value": 260.3,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2023-07-11",
+      "sample_value": 98.5,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-07-18",
+      "sample_value": 135.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-07-25",
+      "sample_value": 137.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-08-01",
+      "sample_value": 100.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-08-22",
+      "sample_value": 125.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-08-29",
+      "sample_value": 328.2,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2023-09-05",
+      "sample_value": 119.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-09-12",
+      "sample_value": 110.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-06-11",
+      "sample_value": 78.2,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-06-18",
+      "sample_value": 78.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-06-25",
+      "sample_value": 113.7,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-02",
+      "sample_value": 80.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-17",
+      "sample_value": 63.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-23",
+      "sample_value": 186.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-30",
+      "sample_value": 980.4,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2024-08-07",
+      "sample_value": 148.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-12",
+      "sample_value": 101.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-21",
+      "sample_value": 54.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-28",
+      "sample_value": 47.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-04",
+      "sample_value": 213.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-11",
+      "sample_value": 34.5,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-06-02",
+      "sample_value": 166.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-06-09",
+      "sample_value": 547.5,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-06-16",
+      "sample_value": 1986.3,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-23",
+      "sample_value": 2419.6,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-30",
+      "sample_value": 1553.1,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-07-08",
+      "sample_value": 290.9,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2025-07-14",
+      "sample_value": 101.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-07-21",
+      "sample_value": 461.1,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-07-28",
+      "sample_value": 161.6,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-04",
+      "sample_value": 547.5,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-08-11",
+      "sample_value": 93.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-17",
+      "sample_value": 115.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-25",
+      "sample_value": 39.1,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-14",
+      "sample_value": 68.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-22",
+      "sample_value": 2419.6,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-09-28",
+      "sample_value": 57.0,
+      "status": "Safe"
+    }
+  ],
+  "predicted": [],
+  "thresholds": {
+    "safe": 235,
+    "advisory": 350,
+    "caution": 750
+  }
+}

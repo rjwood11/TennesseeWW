@@ -1,0 +1,77 @@
+{
+  "site_id": "hwy100",
+  "days": 1095,
+  "measured": [
+    {
+      "sample_date": "2023-05-30",
+      "sample_value": 59.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-06-06",
+      "sample_value": 122.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-06-13",
+      "sample_value": 120.1,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-06-20",
+      "sample_value": 727.0,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2023-06-27",
+      "sample_value": 142.1,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-07-11",
+      "sample_value": 101.7,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-07-18",
+      "sample_value": 59.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-07-25",
+      "sample_value": 65.1,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-08-01",
+      "sample_value": 40.5,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-08-22",
+      "sample_value": 11.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-09-05",
+      "sample_value": 125.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-09-12",
+      "sample_value": 78.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-07-16",
+      "sample_value": 16.4,
+      "status": "Safe"
+    }
+  ],
+  "predicted": [],
+  "thresholds": {
+    "safe": 235,
+    "advisory": 350,
+    "caution": 750
+  }
+}

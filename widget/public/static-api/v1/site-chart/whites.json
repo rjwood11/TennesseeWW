@@ -1,0 +1,493 @@
+{
+  "site_id": "whites",
+  "days": 5000,
+  "measured": [
+    {
+      "sample_date": "2022-06-07",
+      "sample_value": 2419.6,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2022-06-14",
+      "sample_value": 117.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-06-21",
+      "sample_value": 127.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-06-28",
+      "sample_value": 90.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-07-12",
+      "sample_value": 517.2,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2022-07-19",
+      "sample_value": 1203.3,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2023-07-10",
+      "sample_value": 105.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-07-18",
+      "sample_value": 88.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-07-25",
+      "sample_value": 111.2,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-08-01",
+      "sample_value": 52.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-08-29",
+      "sample_value": 98.7,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2023-09-11",
+      "sample_value": 28.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-06-10",
+      "sample_value": 517.2,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2024-06-24",
+      "sample_value": 33.2,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-01",
+      "sample_value": 21.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-08",
+      "sample_value": 59.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-15",
+      "sample_value": 16.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-22",
+      "sample_value": 218.7,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-07-29",
+      "sample_value": 3106.2,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2024-08-05",
+      "sample_value": 61.2,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-12",
+      "sample_value": 70.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-20",
+      "sample_value": 123.6,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-08-26",
+      "sample_value": 32.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-02",
+      "sample_value": 2419.6,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2024-09-10",
+      "sample_value": 35.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-17",
+      "sample_value": 116.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-09-24",
+      "sample_value": 110.6,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-10-01",
+      "sample_value": 344.8,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2024-10-08",
+      "sample_value": 224.7,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2024-10-14",
+      "sample_value": 1299.7,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2024-10-22",
+      "sample_value": 50.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-06-02",
+      "sample_value": 115.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-06-09",
+      "sample_value": 816.4,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-16",
+      "sample_value": 167.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-06-22",
+      "sample_value": 184.2,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-06-30",
+      "sample_value": 233.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-07-08",
+      "sample_value": 66.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-07-14",
+      "sample_value": 24.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-07-21",
+      "sample_value": 387.3,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-07-28",
+      "sample_value": 40.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-04",
+      "sample_value": 40.2,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-11",
+      "sample_value": 135.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-18",
+      "sample_value": 88.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-25",
+      "sample_value": 23.5,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-08",
+      "sample_value": 34.1,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-15",
+      "sample_value": 93.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-22",
+      "sample_value": 31.5,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-29",
+      "sample_value": 163.8,
+      "status": "Safe"
+    }
+  ],
+  "predicted": [
+    {
+      "sample_date": "2022-06-07",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2022-06-14",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2022-06-21",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2022-06-28",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2022-07-12",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2022-07-19",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2023-07-10",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2023-07-18",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2023-07-25",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2023-08-01",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2023-08-29",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2023-09-11",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-06-10",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-06-24",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-07-01",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-07-08",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-07-15",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-07-22",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-07-29",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-08-05",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-08-12",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-08-20",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-08-26",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-09-02",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-09-10",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-09-17",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-09-24",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-10-01",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-10-08",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-10-14",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2024-10-22",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-06-02",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-06-09",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-06-16",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-06-22",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-06-30",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-07-08",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-07-14",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-07-21",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-07-28",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-08-04",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-08-11",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-08-18",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-08-25",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-09-08",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-09-15",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-09-22",
+      "pred_ecoli": null,
+      "status": "NoData"
+    },
+    {
+      "sample_date": "2025-09-29",
+      "pred_ecoli": null,
+      "status": "NoData"
+    }
+  ],
+  "thresholds": {
+    "safe": 235.0,
+    "advisory": 350.0,
+    "caution": 750.0
+  }
+}

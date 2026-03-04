@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    container_name: tnww-api
+    ports:
+      - "8000:8000"
+    environment:
+      TNWW_TIMEZONE: ${TNWW_TIMEZONE:-America/Chicago}
+      TNWW_SQLITE_PATH: ${TNWW_SQLITE_PATH:-/data/tnww.sqlite}
+      TNWW_OPENMETEO_LAT: ${TNWW_OPENMETEO_LAT:-36.0598}
+      TNWW_OPENMETEO_LON: ${TNWW_OPENMETEO_LON:--86.8291}
+      TNWW_DROPBOX_SAMPLING_XLSX: ${TNWW_DROPBOX_SAMPLING_XLSX}
+      TNWW_CONFIG_DIR: /app/config
+    volumes:
+      - tnww_data:/data
+    restart: unless-stopped
+
+volumes:
+  tnww_data:
