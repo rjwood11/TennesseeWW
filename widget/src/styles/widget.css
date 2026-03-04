@@ -63,7 +63,7 @@
 .tnww-status-safe { color: #1f9d55; }
 .tnww-status-advisory { color: #ca8a04; }
 .tnww-status-caution { color: #ea580c; }
-.tnww-status-warning { color: #dc2626; }
+.tnww-status-warning { color: #991b1b; }
 .tnww-status-nodata { color: #6b7280; }
 
 .tnww-drawer {
@@ -100,9 +100,9 @@
 }
 
 .tnww-pill.safe { background: #1f9d55; }
-.tnww-pill.advisory { background: #eab308; color: #111827; }
+.tnww-pill.advisory { background: #facc15; color: #111827; }
 .tnww-pill.caution { background: #f97316; }
-.tnww-pill.warning { background: #dc2626; }
+.tnww-pill.warning { background: #991b1b; }
 .tnww-pill.nodata { background: #9ca3af; }
 
 .tnww-disclaimer {

@@ -6,9 +6,9 @@ import type { ForecastItem, Status } from "../api/types";
 
 const COLOR_BY_STATUS: Record<Status, string> = {
   Safe: "#1f9d55",
-  Advisory: "#eab308",
+  Advisory: "#facc15",
   Caution: "#f97316",
-  Warning: "#dc2626",
+  Warning: "#991b1b",
   NoData: "#9ca3af",
 };
 

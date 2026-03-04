@@ -54,6 +54,16 @@ Use scheduled GitHub Actions + GitHub Pages:
 - Workflow: `.github/workflows/pages-static.yml`
 - Guide: `docs/GITHUB_PAGES.md`
 
+## Model Overlay Toggle (UI)
+The model overlay feature remains implemented, but the button can be hidden/shown with one flag:
+
+- File: `widget/src/components/TimeseriesChart.tsx`
+- Constant: `SHOW_MODEL_OVERLAY_TOGGLE`
+  - `false` = hide button from users
+  - `true` = show "Show/Hide Model Overlay" button
+
+This only controls button visibility. The underlying overlay logic remains in the code.
+
 ## Update Models (Step-by-Step, No Code Changes)
 Only edit:
 - `config/models.yaml`

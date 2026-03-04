@@ -8,11 +8,13 @@ interface Props {
   siteName: string;
 }
 
+const SHOW_MODEL_OVERLAY_TOGGLE = false;
+
 const STATUS_COLORS: Record<Status, string> = {
   Safe: "#1f9d55",
-  Advisory: "#ca8a04",
+  Advisory: "#facc15",
   Caution: "#ea580c",
-  Warning: "#dc2626",
+  Warning: "#991b1b",
   NoData: "#9ca3af",
 };
 
@@ -183,9 +185,11 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
     <div className="tnww-timeseries">
       <div className="tnww-timeseries-head">
         <h4>E. coli Through Time: {siteName}</h4>
-        <button type="button" className="tnww-toggle" onClick={() => setShowPredicted((prev) => !prev)}>
-          {showPredicted ? "Hide Model Overlay" : "Show Model Overlay"}
-        </button>
+        {SHOW_MODEL_OVERLAY_TOGGLE && (
+          <button type="button" className="tnww-toggle" onClick={() => setShowPredicted((prev) => !prev)}>
+            {showPredicted ? "Hide Model Overlay" : "Show Model Overlay"}
+          </button>
+        )}
       </div>
       <div className="tnww-date-controls">
         <label>
