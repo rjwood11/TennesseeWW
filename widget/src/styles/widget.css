@@ -3,10 +3,10 @@
   --tnww-text: #183038;
   --tnww-panel: #ffffff;
   --tnww-border: #c7d5df;
-  --tnww-status-safe: #22c55e;
-  --tnww-status-advisory: #fde047;
-  --tnww-status-caution: #fb923c;
-  --tnww-status-warning: #ef4444;
+  --tnww-status-safe: #39ff14;
+  --tnww-status-advisory: #fff700;
+  --tnww-status-caution: #ff7a00;
+  --tnww-status-warning: #ff073a;
 }
 
 .tnww-widget {
