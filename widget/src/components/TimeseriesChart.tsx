@@ -194,21 +194,63 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
     return ticks;
   }, [pointDates]);
 
-  const measuredPath = points
-    .map((point, idx) => {
+  const measuredSegments = useMemo(() => {
+    const segments: string[] = [];
+    let currentYear: number | null = null;
+    let current: string[] = [];
+
+    for (let idx = 0; idx < points.length; idx += 1) {
+      const point = points[idx];
       const d = pointDates[idx];
-      return d ? `${x(d)},${y(point.sample_value)}` : null;
-    })
-    .filter((v): v is string => Boolean(v))
-    .join(" ");
-  const predictedPath = points
-    .map((point, idx) => {
+      if (!d) continue;
+      const year = d.getFullYear();
+      const coord = `${x(d)},${y(point.sample_value)}`;
+
+      if (currentYear === null || year === currentYear) {
+        current.push(coord);
+      } else {
+        if (current.length >= 2) segments.push(current.join(" "));
+        current = [coord];
+      }
+      currentYear = year;
+    }
+
+    if (current.length >= 2) segments.push(current.join(" "));
+    return segments;
+  }, [points, pointDates, xMin, xMax, xSpan, yMax]);
+
+  const predictedSegments = useMemo(() => {
+    const segments: string[] = [];
+    let currentYear: number | null = null;
+    let current: string[] = [];
+
+    for (let idx = 0; idx < points.length; idx += 1) {
+      const point = points[idx];
       const pred = predictedByDate.get(point.sample_date);
       const d = pointDates[idx];
-      return pred && pred.pred_ecoli !== null && d ? `${x(d)},${y(pred.pred_ecoli)}` : null;
-    })
-    .filter((v): v is string => Boolean(v))
-    .join(" ");
+
+      if (!d || !pred || pred.pred_ecoli === null) {
+        if (current.length >= 2) segments.push(current.join(" "));
+        current = [];
+        currentYear = null;
+        continue;
+      }
+
+      const year = d.getFullYear();
+      const coord = `${x(d)},${y(pred.pred_ecoli)}`;
+
+      if (currentYear === null || year === currentYear) {
+        current.push(coord);
+      } else {
+        if (current.length >= 2) segments.push(current.join(" "));
+        current = [coord];
+      }
+      currentYear = year;
+    }
+
+    if (current.length >= 2) segments.push(current.join(" "));
+    return segments;
+  }, [points, pointDates, predictedByDate, xMin, xMax, xSpan, yMax]);
 
   return (
     <div className="tnww-timeseries">
@@ -283,8 +325,13 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
               {`${Math.round(thresholds.caution)} MPN/100 mL`}
             </text>
 
-            <polyline points={measuredPath} className="tnww-trend-line measured" />
-            {showPredicted && predictedPath && <polyline points={predictedPath} className="tnww-trend-line predicted" />}
+            {measuredSegments.map((segment, index) => (
+              <polyline key={`measured-segment-${index}`} points={segment} className="tnww-trend-line measured" />
+            ))}
+            {showPredicted &&
+              predictedSegments.map((segment, index) => (
+                <polyline key={`predicted-segment-${index}`} points={segment} className="tnww-trend-line predicted" />
+              ))}
 
             {points.map((point, idx) => (
               <circle
