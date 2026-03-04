@@ -185,10 +185,22 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
 
   const monthLabelTicks = useMemo(() => {
     if (monthTicks.length === 0) return [];
-    const maxLabels = Math.max(4, Math.floor(plotWidth / 70));
-    const stride = Math.max(1, Math.ceil(monthTicks.length / maxLabels));
-    return monthTicks.filter((_, idx) => idx % stride === 0 || idx === monthTicks.length - 1);
-  }, [monthTicks, plotWidth]);
+    const minSpacingPx = 24;
+    const selected: Date[] = [];
+    let lastX = -Infinity;
+
+    for (let idx = 0; idx < monthTicks.length; idx += 1) {
+      const tick = monthTicks[idx];
+      const tickX = x(tick);
+      const isLast = idx === monthTicks.length - 1;
+      if (selected.length === 0 || tickX - lastX >= minSpacingPx || isLast) {
+        selected.push(tick);
+        lastX = tickX;
+      }
+    }
+
+    return selected;
+  }, [monthTicks, xMin, xMax, xSpan, plotWidth]);
 
   const yearTicks = useMemo(() => {
     if (pointDates.length === 0 || !pointDates[0] || !pointDates[pointDates.length - 1]) return [];
@@ -393,9 +405,10 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
               <text
                 key={`xmonth-label-${tick.toISOString()}`}
                 x={x(tick)}
-                y={top + plotHeight + 12}
+                y={top + plotHeight + 14}
                 textAnchor="middle"
                 className="tnww-axis-text tnww-axis-month-text"
+                transform={`rotate(45 ${x(tick)} ${top + plotHeight + 14})`}
               >
                 {formatMonthShort(tick)}
               </text>
