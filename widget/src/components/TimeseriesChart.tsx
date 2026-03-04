@@ -11,10 +11,10 @@ interface Props {
 const SHOW_MODEL_OVERLAY_TOGGLE = false;
 
 const STATUS_COLORS: Record<Status, string> = {
-  Safe: "#1f9d55",
-  Advisory: "#facc15",
-  Caution: "#ea580c",
-  Warning: "#991b1b",
+  Safe: "#22c55e",
+  Advisory: "#fde047",
+  Caution: "#fb923c",
+  Warning: "#ef4444",
   NoData: "#9ca3af",
 };
 

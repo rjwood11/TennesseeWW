@@ -3,6 +3,10 @@
   --tnww-text: #183038;
   --tnww-panel: #ffffff;
   --tnww-border: #c7d5df;
+  --tnww-status-safe: #22c55e;
+  --tnww-status-advisory: #fde047;
+  --tnww-status-caution: #fb923c;
+  --tnww-status-warning: #ef4444;
 }
 
 .tnww-widget {
@@ -60,10 +64,10 @@
   box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.15);
 }
 
-.tnww-status-safe { color: #1f9d55; }
-.tnww-status-advisory { color: #ca8a04; }
-.tnww-status-caution { color: #ea580c; }
-.tnww-status-warning { color: #991b1b; }
+.tnww-status-safe { color: var(--tnww-status-safe); }
+.tnww-status-advisory { color: var(--tnww-status-advisory); }
+.tnww-status-caution { color: var(--tnww-status-caution); }
+.tnww-status-warning { color: var(--tnww-status-warning); }
 .tnww-status-nodata { color: #6b7280; }
 
 .tnww-drawer {
@@ -99,10 +103,10 @@
   color: white;
 }
 
-.tnww-pill.safe { background: #1f9d55; }
-.tnww-pill.advisory { background: #facc15; color: #111827; }
-.tnww-pill.caution { background: #f97316; }
-.tnww-pill.warning { background: #991b1b; }
+.tnww-pill.safe { background: var(--tnww-status-safe); }
+.tnww-pill.advisory { background: var(--tnww-status-advisory); color: #111827; }
+.tnww-pill.caution { background: var(--tnww-status-caution); }
+.tnww-pill.warning { background: var(--tnww-status-warning); }
 .tnww-pill.nodata { background: #9ca3af; }
 
 .tnww-disclaimer {
@@ -192,15 +196,15 @@
 }
 
 .tnww-threshold-line.safe {
-  stroke: #1f9d55;
+  stroke: var(--tnww-status-safe);
 }
 
 .tnww-threshold-line.advisory {
-  stroke: #ca8a04;
+  stroke: var(--tnww-status-advisory);
 }
 
 .tnww-threshold-line.caution {
-  stroke: #ea580c;
+  stroke: var(--tnww-status-caution);
 }
 
 .tnww-trend-line {
@@ -244,15 +248,15 @@
 }
 
 .tnww-threshold-label.safe {
-  fill: #1f9d55;
+  fill: var(--tnww-status-safe);
 }
 
 .tnww-threshold-label.advisory {
-  fill: #ca8a04;
+  fill: var(--tnww-status-advisory);
 }
 
 .tnww-threshold-label.caution {
-  fill: #ea580c;
+  fill: var(--tnww-status-caution);
 }
 
 .tnww-timeseries-empty {

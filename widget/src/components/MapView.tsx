@@ -5,10 +5,10 @@ import { CircleMarker, MapContainer, TileLayer, Tooltip } from "react-leaflet";
 import type { ForecastItem, Status } from "../api/types";
 
 const COLOR_BY_STATUS: Record<Status, string> = {
-  Safe: "#1f9d55",
-  Advisory: "#facc15",
-  Caution: "#f97316",
-  Warning: "#991b1b",
+  Safe: "#22c55e",
+  Advisory: "#fde047",
+  Caution: "#fb923c",
+  Warning: "#ef4444",
   NoData: "#9ca3af",
 };
 
