@@ -6,40 +6,54 @@ function normalizedBase(apiBase: string): string {
 
 function isStaticBase(apiBase: string): boolean {
   const base = normalizedBase(apiBase);
-  return base === "." || base === "" || base.startsWith("./") || base.startsWith("../");
+  if (base === "." || base === "" || base.startsWith("./") || base.startsWith("../")) return true;
+  if (base.startsWith("/")) return base.endsWith("/static-api");
+  try {
+    const parsed = new URL(base);
+    return parsed.pathname.endsWith("/static-api");
+  } catch {
+    return false;
+  }
+}
+
+async function fetchJsonWithFallback<T>(
+  preferredUrl: string,
+  fallbackUrl: string,
+  label: string,
+  allowFallback: (status: number) => boolean = (status) => status >= 400
+): Promise<T> {
+  const preferredRes = await fetch(preferredUrl, { headers: { Accept: "application/json" } });
+  if (preferredRes.ok) return (await preferredRes.json()) as T;
+
+  if (!allowFallback(preferredRes.status)) {
+    throw new Error(`${label} request failed: ${preferredRes.status}`);
+  }
+
+  const fallbackRes = await fetch(fallbackUrl, { headers: { Accept: "application/json" } });
+  if (fallbackRes.ok) return (await fallbackRes.json()) as T;
+  throw new Error(`${label} request failed: ${preferredRes.status} (fallback ${fallbackRes.status})`);
 }
 
 export async function fetchForecast(apiBase: string): Promise<ForecastResponse> {
   const base = normalizedBase(apiBase);
-  const url = isStaticBase(apiBase) ? `${base}/v1/forecast.json` : `${base}/v1/forecast`;
-  const res = await fetch(url, { headers: { Accept: "application/json" } });
-  if (!res.ok) {
-    throw new Error(`Forecast request failed: ${res.status}`);
-  }
-  return (await res.json()) as ForecastResponse;
+  const staticUrl = `${base}/v1/forecast.json`;
+  const dynamicUrl = `${base}/v1/forecast`;
+  return isStaticBase(apiBase)
+    ? fetchJsonWithFallback<ForecastResponse>(staticUrl, dynamicUrl, "Forecast")
+    : fetchJsonWithFallback<ForecastResponse>(dynamicUrl, staticUrl, "Forecast");
 }
 
 export async function fetchTimeseries(apiBase: string, siteId: string, days = 14): Promise<TimeseriesResponse> {
   const base = normalizedBase(apiBase);
+  const staticUrl = `${base}/v1/timeseries/${siteId}.json`;
+  const dynamicUrl = `${base}/v1/timeseries?${new URLSearchParams({ site_id: siteId, days: String(days) }).toString()}`;
+
   if (isStaticBase(apiBase)) {
-    const res = await fetch(`${base}/v1/timeseries/${siteId}.json`, {
-      headers: { Accept: "application/json" },
-    });
-    if (!res.ok) {
-      throw new Error(`Timeseries request failed: ${res.status}`);
-    }
-    const data = (await res.json()) as TimeseriesResponse;
+    const data = await fetchJsonWithFallback<TimeseriesResponse>(staticUrl, dynamicUrl, "Timeseries");
     return { ...data, items: (data.items ?? []).slice(0, Math.max(1, days)) };
   }
 
-  const params = new URLSearchParams({ site_id: siteId, days: String(days) });
-  const res = await fetch(`${base}/v1/timeseries?${params.toString()}`, {
-    headers: { Accept: "application/json" },
-  });
-  if (!res.ok) {
-    throw new Error(`Timeseries request failed: ${res.status}`);
-  }
-  return (await res.json()) as TimeseriesResponse;
+  return fetchJsonWithFallback<TimeseriesResponse>(dynamicUrl, staticUrl, "Timeseries");
 }
 
 export async function fetchSiteChart(
@@ -48,14 +62,19 @@ export async function fetchSiteChart(
   options?: { days?: number; includePredictions?: boolean; startDate?: string; endDate?: string }
 ): Promise<SiteChartResponse> {
   const base = normalizedBase(apiBase);
+  const params = new URLSearchParams({
+    site_id: siteId,
+    days: String(options?.days ?? 5000),
+    include_predictions: String(Boolean(options?.includePredictions)),
+  });
+  if (options?.startDate) params.set("start_date", options.startDate);
+  if (options?.endDate) params.set("end_date", options.endDate);
+
+  const staticUrl = `${base}/v1/site-chart/${siteId}.json`;
+  const dynamicUrl = `${base}/v1/site-chart?${params.toString()}`;
+
   if (isStaticBase(apiBase)) {
-    const res = await fetch(`${base}/v1/site-chart/${siteId}.json`, {
-      headers: { Accept: "application/json" },
-    });
-    if (!res.ok) {
-      throw new Error(`Site chart request failed: ${res.status}`);
-    }
-    const data = (await res.json()) as SiteChartResponse;
+    const data = await fetchJsonWithFallback<SiteChartResponse>(staticUrl, dynamicUrl, "Site chart");
     const start = options?.startDate;
     const end = options?.endDate;
     const inRange = (d: string): boolean => {
@@ -70,18 +89,5 @@ export async function fetchSiteChart(
     };
   }
 
-  const params = new URLSearchParams({
-    site_id: siteId,
-    days: String(options?.days ?? 5000),
-    include_predictions: String(Boolean(options?.includePredictions)),
-  });
-  if (options?.startDate) params.set("start_date", options.startDate);
-  if (options?.endDate) params.set("end_date", options.endDate);
-  const res = await fetch(`${base}/v1/site-chart?${params.toString()}`, {
-    headers: { Accept: "application/json" },
-  });
-  if (!res.ok) {
-    throw new Error(`Site chart request failed: ${res.status}`);
-  }
-  return (await res.json()) as SiteChartResponse;
+  return fetchJsonWithFallback<SiteChartResponse>(dynamicUrl, staticUrl, "Site chart");
 }
