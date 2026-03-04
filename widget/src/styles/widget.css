@@ -246,6 +246,10 @@
   font-weight: 700;
 }
 
+.tnww-axis-month-text {
+  font-size: 9px;
+}
+
 .tnww-axis-title {
   fill: #1f2937;
   font-size: 11px;

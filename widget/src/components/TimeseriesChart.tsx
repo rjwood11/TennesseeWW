@@ -22,6 +22,10 @@ function asDateInput(value: Date): string {
   return value.toISOString().slice(0, 10);
 }
 
+function formatMonthShort(value: Date): string {
+  return value.toLocaleDateString(undefined, { month: "short" });
+}
+
 function niceStep(max: number): number {
   if (max <= 100) return 10;
   if (max <= 250) return 25;
@@ -169,17 +173,22 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
   const y = (value: number): number => top + ((yMax - value) / yMax) * plotHeight;
 
   const monthTicks = useMemo(() => {
-    if (pointDates.length === 0 || !pointDates[0] || !pointDates[pointDates.length - 1]) return [];
-    const start = pointDates[0];
-    const end = pointDates[pointDates.length - 1];
-    const cursor = new Date(start.getFullYear(), start.getMonth(), 1, 12);
-    const ticks: Date[] = [];
-    while (cursor <= end) {
-      if (cursor >= start) ticks.push(new Date(cursor));
-      cursor.setMonth(cursor.getMonth() + 1);
+    if (pointDates.length === 0) return [];
+    const uniqueMonths = new Map<string, Date>();
+    for (const d of pointDates) {
+      if (!d) continue;
+      const key = `${d.getFullYear()}-${d.getMonth()}`;
+      if (!uniqueMonths.has(key)) uniqueMonths.set(key, new Date(d.getFullYear(), d.getMonth(), 1, 12));
     }
-    return ticks;
+    return Array.from(uniqueMonths.values()).sort((a, b) => a.getTime() - b.getTime());
   }, [pointDates]);
+
+  const monthLabelTicks = useMemo(() => {
+    if (monthTicks.length === 0) return [];
+    const maxLabels = Math.max(4, Math.floor(plotWidth / 70));
+    const stride = Math.max(1, Math.ceil(monthTicks.length / maxLabels));
+    return monthTicks.filter((_, idx) => idx % stride === 0 || idx === monthTicks.length - 1);
+  }, [monthTicks, plotWidth]);
 
   const yearTicks = useMemo(() => {
     if (pointDates.length === 0 || !pointDates[0] || !pointDates[pointDates.length - 1]) return [];
@@ -380,15 +389,27 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
               </g>
             ))}
 
+            {monthLabelTicks.map((tick) => (
+              <text
+                key={`xmonth-label-${tick.toISOString()}`}
+                x={x(tick)}
+                y={top + plotHeight + 12}
+                textAnchor="middle"
+                className="tnww-axis-text tnww-axis-month-text"
+              >
+                {formatMonthShort(tick)}
+              </text>
+            ))}
+
             {yearTicks.map((tick) => (
               <g key={`xyear-${tick.year}`}>
                 <line x1={x(tick.date)} y1={top + plotHeight} x2={x(tick.date)} y2={top + plotHeight + 6} className="tnww-axis-tick" />
                 <text
                   x={x(tick.date)}
-                  y={top + plotHeight + 18}
+                  y={top + plotHeight + 30}
                   textAnchor="middle"
                   className="tnww-axis-text tnww-axis-year-text"
-                  transform={`rotate(45 ${x(tick.date)} ${top + plotHeight + 18})`}
+                  transform={`rotate(45 ${x(tick.date)} ${top + plotHeight + 30})`}
                 >
                   {tick.year}
                 </text>
