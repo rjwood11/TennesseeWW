@@ -1,6 +1,6 @@
 {
   "site_id": "cottonwood",
-  "days": 1095,
+  "days": 5000,
   "measured": [
     {
       "sample_date": "2025-06-02",
@@ -83,10 +83,91 @@
       "status": "Safe"
     }
   ],
-  "predicted": [],
+  "predicted": [
+    {
+      "sample_date": "2025-06-02",
+      "pred_ecoli": 993,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-09",
+      "pred_ecoli": 2510,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-16",
+      "pred_ecoli": 2233,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-23",
+      "pred_ecoli": 1685,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-06-30",
+      "pred_ecoli": 1194,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-07-06",
+      "pred_ecoli": 510,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-07-14",
+      "pred_ecoli": 347,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2025-07-21",
+      "pred_ecoli": 809,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2025-07-28",
+      "pred_ecoli": 274,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2025-08-04",
+      "pred_ecoli": 138,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-11",
+      "pred_ecoli": 105,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-18",
+      "pred_ecoli": 146,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-08-24",
+      "pred_ecoli": 83,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-08",
+      "pred_ecoli": 487,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2025-09-22",
+      "pred_ecoli": 167,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2025-09-29",
+      "pred_ecoli": 306,
+      "status": "Advisory"
+    }
+  ],
   "thresholds": {
-    "safe": 235,
-    "advisory": 350,
-    "caution": 750
+    "safe": 235.0,
+    "advisory": 350.0,
+    "caution": 750.0
   }
 }
