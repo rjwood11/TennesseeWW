@@ -91,24 +91,30 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
   const points = useMemo(
     () =>
       measured
+        .filter((p) => p.sample_date >= startDate && p.sample_date <= endDate)
         .filter((p) => p.sample_value !== null)
         .map((p) => ({ ...p, sample_value: p.sample_value as number }))
         .sort((a, b) => a.sample_date.localeCompare(b.sample_date)),
-    [measured]
+    [measured, startDate, endDate]
+  );
+
+  const predictedInRange = useMemo(
+    () => predicted.filter((p) => p.sample_date >= startDate && p.sample_date <= endDate),
+    [predicted, startDate, endDate]
   );
 
   const predictedByDate = useMemo(() => {
     const byDate = new Map<string, ChartPredictedPoint>();
-    for (const p of predicted) byDate.set(p.sample_date, p);
+    for (const p of predictedInRange) byDate.set(p.sample_date, p);
     return byDate;
-  }, [predicted]);
+  }, [predictedInRange]);
 
   const yMax = useMemo(() => {
     const values = points.map((p) => p.sample_value);
-    const predValues = predicted.map((p) => p.pred_ecoli).filter((v): v is number => typeof v === "number");
+    const predValues = predictedInRange.map((p) => p.pred_ecoli).filter((v): v is number => typeof v === "number");
     const max = Math.max(...values, ...predValues, thresholds.caution);
     return Math.max(800, Math.ceil(max * 1.2));
-  }, [points, predicted, thresholds.caution]);
+  }, [points, predictedInRange, thresholds.caution]);
 
   const yTicks = useMemo(() => {
     const step = niceStep(yMax);
