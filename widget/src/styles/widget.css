@@ -231,14 +231,24 @@
   stroke-width: 1;
 }
 
+.tnww-axis-tick.minor {
+  stroke-width: 0.8;
+  opacity: 0.7;
+}
+
 .tnww-axis-text {
   fill: #334155;
-  font-size: 11px;
+  font-size: 10px;
+}
+
+.tnww-axis-year-text {
+  font-size: 10px;
+  font-weight: 700;
 }
 
 .tnww-axis-title {
   fill: #1f2937;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
 }
 

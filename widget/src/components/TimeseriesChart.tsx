@@ -18,12 +18,6 @@ const STATUS_COLORS: Record<Status, string> = {
   NoData: "#9ca3af",
 };
 
-function formatDate(value: string): string {
-  const date = new Date(`${value}T12:00:00`);
-  if (Number.isNaN(date.getTime())) return value;
-  return date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
-}
-
 function asDateInput(value: Date): string {
   return value.toISOString().slice(0, 10);
 }
@@ -147,36 +141,71 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
   }, [yMax]);
 
   const width = 760;
-  const height = 320;
+  const height = 340;
   const left = 70;
-  const right = 12;
+  const right = 20;
   const top = 20;
-  const bottom = 62;
+  const bottom = 88;
   const plotWidth = width - left - right;
   const plotHeight = height - top - bottom;
 
-  const x = (index: number): number => {
-    if (points.length <= 1) return left + plotWidth / 2;
-    return left + (index / (points.length - 1)) * plotWidth;
+  const pointDates = useMemo(
+    () =>
+      points.map((p) => {
+        const date = new Date(`${p.sample_date}T12:00:00`);
+        return Number.isNaN(date.getTime()) ? null : date;
+      }),
+    [points]
+  );
+
+  const xMin = pointDates[0]?.getTime() ?? 0;
+  const xMax = pointDates[pointDates.length - 1]?.getTime() ?? 0;
+  const xSpan = Math.max(1, xMax - xMin);
+
+  const x = (date: Date): number => {
+    if (pointDates.length <= 1) return left + plotWidth / 2;
+    return left + ((date.getTime() - xMin) / xSpan) * plotWidth;
   };
   const y = (value: number): number => top + ((yMax - value) / yMax) * plotHeight;
 
-  const xTickIndices = useMemo(() => {
-    if (points.length === 0) return [];
-    const targetTicks = Math.min(8, points.length);
-    if (targetTicks <= 1) return [0];
-    const stride = Math.max(1, Math.floor((points.length - 1) / (targetTicks - 1)));
-    const idx: number[] = [];
-    for (let i = 0; i < points.length; i += stride) idx.push(i);
-    if (idx[idx.length - 1] !== points.length - 1) idx.push(points.length - 1);
-    return Array.from(new Set(idx));
-  }, [points]);
+  const monthTicks = useMemo(() => {
+    if (pointDates.length === 0 || !pointDates[0] || !pointDates[pointDates.length - 1]) return [];
+    const start = pointDates[0];
+    const end = pointDates[pointDates.length - 1];
+    const cursor = new Date(start.getFullYear(), start.getMonth(), 1, 12);
+    const ticks: Date[] = [];
+    while (cursor <= end) {
+      if (cursor >= start) ticks.push(new Date(cursor));
+      cursor.setMonth(cursor.getMonth() + 1);
+    }
+    return ticks;
+  }, [pointDates]);
 
-  const measuredPath = points.map((point, idx) => `${x(idx)},${y(point.sample_value)}`).join(" ");
+  const yearTicks = useMemo(() => {
+    if (pointDates.length === 0 || !pointDates[0] || !pointDates[pointDates.length - 1]) return [];
+    const start = pointDates[0];
+    const end = pointDates[pointDates.length - 1];
+    const ticks: Array<{ year: number; date: Date }> = [];
+    for (let year = start.getFullYear(); year <= end.getFullYear(); year += 1) {
+      const jan1 = new Date(year, 0, 1, 12);
+      const tickDate = jan1 < start ? new Date(start) : jan1;
+      if (tickDate <= end) ticks.push({ year, date: tickDate });
+    }
+    return ticks;
+  }, [pointDates]);
+
+  const measuredPath = points
+    .map((point, idx) => {
+      const d = pointDates[idx];
+      return d ? `${x(d)},${y(point.sample_value)}` : null;
+    })
+    .filter((v): v is string => Boolean(v))
+    .join(" ");
   const predictedPath = points
     .map((point, idx) => {
       const pred = predictedByDate.get(point.sample_date);
-      return pred && pred.pred_ecoli !== null ? `${x(idx)},${y(pred.pred_ecoli)}` : null;
+      const d = pointDates[idx];
+      return pred && pred.pred_ecoli !== null && d ? `${x(d)},${y(pred.pred_ecoli)}` : null;
     })
     .filter((v): v is string => Boolean(v))
     .join(" ");
@@ -260,7 +289,7 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
             {points.map((point, idx) => (
               <circle
                 key={`${point.sample_date}-measured`}
-                cx={x(idx)}
+                cx={pointDates[idx] ? x(pointDates[idx]) : left + plotWidth / 2}
                 cy={y(point.sample_value)}
                 r="4"
                 fill={STATUS_COLORS[point.status]}
@@ -276,7 +305,7 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
                 return (
                   <circle
                     key={`${point.sample_date}-pred`}
-                    cx={x(idx)}
+                    cx={pointDates[idx] ? x(pointDates[idx]) : left + plotWidth / 2}
                     cy={y(pred.pred_ecoli)}
                     r="3.2"
                     fill="#ffffff"
@@ -298,11 +327,23 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
               </g>
             ))}
 
-            {xTickIndices.map((idx) => (
-              <g key={`xtick-${idx}`}>
-                <line x1={x(idx)} y1={top + plotHeight} x2={x(idx)} y2={top + plotHeight + 5} className="tnww-axis-tick" />
-                <text x={x(idx)} y={height - 10} textAnchor="middle" className="tnww-axis-text">
-                  {formatDate(points[idx].sample_date)}
+            {monthTicks.map((tick) => (
+              <g key={`xmonth-${tick.toISOString()}`}>
+                <line x1={x(tick)} y1={top + plotHeight} x2={x(tick)} y2={top + plotHeight + 3} className="tnww-axis-tick minor" />
+              </g>
+            ))}
+
+            {yearTicks.map((tick) => (
+              <g key={`xyear-${tick.year}`}>
+                <line x1={x(tick.date)} y1={top + plotHeight} x2={x(tick.date)} y2={top + plotHeight + 6} className="tnww-axis-tick" />
+                <text
+                  x={x(tick.date)}
+                  y={top + plotHeight + 18}
+                  textAnchor="middle"
+                  className="tnww-axis-text tnww-axis-year-text"
+                  transform={`rotate(45 ${x(tick.date)} ${top + plotHeight + 18})`}
+                >
+                  {tick.year}
                 </text>
               </g>
             ))}
@@ -310,7 +351,7 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
             <text x={left / 2} y={top + plotHeight / 2} textAnchor="middle" className="tnww-axis-title" transform={`rotate(-90 ${left / 2} ${top + plotHeight / 2})`}>
               E. coli (MPN/100 mL)
             </text>
-            <text x={left + plotWidth / 2} y={height - 2} textAnchor="middle" className="tnww-axis-title">
+            <text x={left + plotWidth / 2} y={height - 4} textAnchor="middle" className="tnww-axis-title">
               Date
             </text>
           </svg>
