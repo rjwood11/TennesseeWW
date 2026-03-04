@@ -1,6 +1,6 @@
 {
   "site_id": "centerville",
-  "days": 5000,
+  "days": 0,
   "measured": [
     {
       "sample_date": "2024-07-16",
@@ -133,141 +133,10 @@
       "status": "Caution"
     }
   ],
-  "predicted": [
-    {
-      "sample_date": "2024-07-16",
-      "pred_ecoli": -82,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2024-07-23",
-      "pred_ecoli": 164,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2024-07-30",
-      "pred_ecoli": 56,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2024-08-27",
-      "pred_ecoli": -86,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2024-09-03",
-      "pred_ecoli": 61,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2024-09-10",
-      "pred_ecoli": 42,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2024-09-24",
-      "pred_ecoli": 44,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2024-10-01",
-      "pred_ecoli": 311,
-      "status": "Advisory"
-    },
-    {
-      "sample_date": "2024-10-08",
-      "pred_ecoli": 179,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2024-10-22",
-      "pred_ecoli": 144,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2025-06-01",
-      "pred_ecoli": 828,
-      "status": "Warning"
-    },
-    {
-      "sample_date": "2025-06-08",
-      "pred_ecoli": 397,
-      "status": "Caution"
-    },
-    {
-      "sample_date": "2025-06-16",
-      "pred_ecoli": 1003,
-      "status": "Warning"
-    },
-    {
-      "sample_date": "2025-06-22",
-      "pred_ecoli": 960,
-      "status": "Warning"
-    },
-    {
-      "sample_date": "2025-06-29",
-      "pred_ecoli": 813,
-      "status": "Warning"
-    },
-    {
-      "sample_date": "2025-07-06",
-      "pred_ecoli": 168,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2025-07-13",
-      "pred_ecoli": 256,
-      "status": "Advisory"
-    },
-    {
-      "sample_date": "2025-07-20",
-      "pred_ecoli": 63,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2025-07-27",
-      "pred_ecoli": -7,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2025-08-03",
-      "pred_ecoli": 52,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2025-08-10",
-      "pred_ecoli": -32,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2025-08-24",
-      "pred_ecoli": -5,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2025-09-07",
-      "pred_ecoli": 396,
-      "status": "Caution"
-    },
-    {
-      "sample_date": "2025-09-14",
-      "pred_ecoli": 12,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2025-09-21",
-      "pred_ecoli": -2,
-      "status": "Safe"
-    },
-    {
-      "sample_date": "2025-09-28",
-      "pred_ecoli": 589,
-      "status": "Caution"
-    }
-  ],
+  "predicted": [],
   "thresholds": {
-    "safe": 235.0,
-    "advisory": 350.0,
-    "caution": 750.0
+    "safe": 235,
+    "advisory": 350,
+    "caution": 750
   }
 }

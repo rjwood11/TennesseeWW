@@ -1,7 +1,167 @@
 {
   "site_id": "hwy70",
-  "days": 1095,
+  "days": 0,
   "measured": [
+    {
+      "sample_date": "2020-08-12",
+      "sample_value": 43.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2020-08-19",
+      "sample_value": 140.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2020-09-03",
+      "sample_value": 1200.0,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2020-09-24",
+      "sample_value": 50.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2020-10-08",
+      "sample_value": 39.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2020-10-29",
+      "sample_value": 2400.0,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2021-07-06",
+      "sample_value": 13.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-07-13",
+      "sample_value": 33.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-07-20",
+      "sample_value": 96.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-07-27",
+      "sample_value": 91.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-08-03",
+      "sample_value": 190.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-08-10",
+      "sample_value": 35.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-08-17",
+      "sample_value": 98.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-08-24",
+      "sample_value": 160.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-09-07",
+      "sample_value": 91.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-09-14",
+      "sample_value": 39.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-09-28",
+      "sample_value": 82.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-10-05",
+      "sample_value": 110.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-10-26",
+      "sample_value": 1300.0,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2022-05-31",
+      "sample_value": 113.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-06-07",
+      "sample_value": 28.5,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-06-14",
+      "sample_value": 48.7,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-06-21",
+      "sample_value": 32.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-06-28",
+      "sample_value": 29.2,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-07-12",
+      "sample_value": 59.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-07-19",
+      "sample_value": 1203.3,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2022-07-26",
+      "sample_value": 103.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-08-16",
+      "sample_value": 31.1,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-08-23",
+      "sample_value": 86.7,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-08-30",
+      "sample_value": 1553.1,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2022-09-13",
+      "sample_value": 73.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-09-20",
+      "sample_value": 36.4,
+      "status": "Safe"
+    },
     {
       "sample_date": "2023-05-30",
       "sample_value": 55.6,

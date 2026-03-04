@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { fetchSiteChart } from "../api/client";
 import type { ChartMeasuredPoint, ChartPredictedPoint, Status } from "../api/types";
 
@@ -48,33 +48,37 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
     d.setFullYear(d.getFullYear() - 3);
     return asDateInput(d);
   });
+  const initializedRangeForSite = useRef<string | null>(null);
 
   useEffect(() => {
     if (!siteId) {
       setMeasured([]);
       setPredicted([]);
+      initializedRangeForSite.current = null;
       return;
     }
     let alive = true;
-    if (startDate > endDate) {
-      setError("Start date must be before or equal to end date.");
-      setMeasured([]);
-      setPredicted([]);
-      return;
-    }
     setLoading(true);
     setError(null);
     fetchSiteChart(apiBase, siteId, {
       days: 5000,
       includePredictions: showPredicted,
-      startDate,
-      endDate,
     })
       .then((data) => {
         if (!alive) return;
-        setMeasured(data.measured ?? []);
+        const measuredAll = data.measured ?? [];
+        setMeasured(measuredAll);
         setPredicted(data.predicted ?? []);
         setThresholds(data.thresholds ?? { safe: 235, advisory: 350, caution: 750 });
+
+        if (initializedRangeForSite.current !== siteId) {
+          initializedRangeForSite.current = siteId;
+          if (measuredAll.length > 0) {
+            const sorted = [...measuredAll].sort((a, b) => a.sample_date.localeCompare(b.sample_date));
+            setStartDate(sorted[0].sample_date);
+            setEndDate(sorted[sorted.length - 1].sample_date);
+          }
+        }
       })
       .catch((e: Error) => {
         if (!alive) return;
@@ -86,7 +90,21 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
     return () => {
       alive = false;
     };
-  }, [apiBase, siteId, showPredicted, startDate, endDate]);
+  }, [apiBase, siteId, showPredicted]);
+
+  useEffect(() => {
+    if (startDate > endDate) {
+      setError("Start date must be before or equal to end date.");
+    } else if (error === "Start date must be before or equal to end date.") {
+      setError(null);
+    }
+  }, [startDate, endDate, error]);
+
+  const availableRange = useMemo(() => {
+    if (measured.length === 0) return null;
+    const sorted = [...measured].sort((a, b) => a.sample_date.localeCompare(b.sample_date));
+    return { min: sorted[0].sample_date, max: sorted[sorted.length - 1].sample_date };
+  }, [measured]);
 
   const points = useMemo(
     () =>
@@ -172,11 +190,23 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
       <div className="tnww-date-controls">
         <label>
           Start
-          <input type="date" value={startDate} max={endDate} onChange={(e) => setStartDate(e.target.value)} />
+          <input
+            type="date"
+            value={startDate}
+            min={availableRange?.min}
+            max={endDate}
+            onChange={(e) => setStartDate(e.target.value)}
+          />
         </label>
         <label>
           End
-          <input type="date" value={endDate} min={startDate} onChange={(e) => setEndDate(e.target.value)} />
+          <input
+            type="date"
+            value={endDate}
+            min={startDate}
+            max={availableRange?.max}
+            onChange={(e) => setEndDate(e.target.value)}
+          />
         </label>
       </div>
       {loading && <div className="tnww-timeseries-empty">Loading chart...</div>}

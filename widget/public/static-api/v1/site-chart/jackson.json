@@ -1,7 +1,137 @@
 {
   "site_id": "jackson",
-  "days": 1095,
+  "days": 0,
   "measured": [
+    {
+      "sample_date": "2021-06-29",
+      "sample_value": 56.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-07-06",
+      "sample_value": 99.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-07-13",
+      "sample_value": 480.0,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2021-07-20",
+      "sample_value": 460.0,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2021-07-27",
+      "sample_value": 280.0,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2021-08-03",
+      "sample_value": 820.0,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2021-08-10",
+      "sample_value": 230.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-08-24",
+      "sample_value": 87.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-09-07",
+      "sample_value": 310.0,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2021-09-14",
+      "sample_value": 80.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-09-28",
+      "sample_value": 240.0,
+      "status": "Advisory"
+    },
+    {
+      "sample_date": "2021-10-05",
+      "sample_value": 650.0,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2021-10-12",
+      "sample_value": 690.0,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2021-10-19",
+      "sample_value": 170.0,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2021-10-26",
+      "sample_value": 1300.0,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2022-05-24",
+      "sample_value": 387.3,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2022-05-31",
+      "sample_value": 488.4,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2022-06-07",
+      "sample_value": 2419.6,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2022-06-21",
+      "sample_value": 387.3,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2022-06-28",
+      "sample_value": 198.9,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-07-12",
+      "sample_value": 104.3,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-07-19",
+      "sample_value": 517.2,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2022-07-26",
+      "sample_value": 613.1,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2022-08-16",
+      "sample_value": 727.0,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2022-08-23",
+      "sample_value": 167.4,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2022-08-30",
+      "sample_value": 648.8,
+      "status": "Caution"
+    },
     {
       "sample_date": "2023-06-06",
       "sample_value": 488.4,

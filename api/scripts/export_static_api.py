@@ -34,8 +34,8 @@ async def main() -> None:
     parser.add_argument(
         "--days",
         type=int,
-        default=1095,
-        help="Measured-history window for static site-chart files (default: 1095)",
+        default=0,
+        help="Measured-history window for static site-chart files. Use 0 for all available data (default: 0).",
     )
     parser.add_argument(
         "--timeseries-days",
@@ -96,7 +96,7 @@ async def main() -> None:
 async def _load_measured_by_site(days: int) -> dict[str, list[dict]]:
     settings = get_settings()
     sites = load_sites()
-    start_date = datetime.now(timezone.utc).date() - timedelta(days=max(1, days))
+    start_date = datetime.now(timezone.utc).date() - timedelta(days=max(1, days)) if days > 0 else None
     end_date = datetime.now(timezone.utc).date()
     by_site: dict[str, list[dict]] = {site.id: [] for site in sites}
 
@@ -109,7 +109,9 @@ async def _load_measured_by_site(days: int) -> dict[str, list[dict]]:
     if df is None:
         return by_site
 
-    filtered = df[(df["sample_date"].dt.date >= start_date) & (df["sample_date"].dt.date <= end_date)].copy()
+    filtered = df.copy()
+    if start_date is not None:
+        filtered = filtered[(filtered["sample_date"].dt.date >= start_date) & (filtered["sample_date"].dt.date <= end_date)].copy()
     if filtered.empty:
         return by_site
 
