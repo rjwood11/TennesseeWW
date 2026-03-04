@@ -12,7 +12,7 @@ const SHOW_MODEL_OVERLAY_TOGGLE = false;
 
 const STATUS_COLORS: Record<Status, string> = {
   Safe: "#39ff14",
-  Advisory: "#fff700",
+  Advisory: "#f6c445",
   Caution: "#ff7a00",
   Warning: "#ff073a",
   NoData: "#9ca3af",
@@ -264,8 +264,8 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
                 cy={y(point.sample_value)}
                 r="4"
                 fill={STATUS_COLORS[point.status]}
-                stroke="#ffffff"
-                strokeWidth="1.4"
+                stroke="#000000"
+                strokeWidth="0.8"
               />
             ))}
 
@@ -280,8 +280,8 @@ export default function TimeseriesChart({ apiBase, siteId, siteName }: Props) {
                     cy={y(pred.pred_ecoli)}
                     r="3.2"
                     fill="#ffffff"
-                    stroke="#2563eb"
-                    strokeWidth="1.6"
+                    stroke="#000000"
+                    strokeWidth="0.8"
                   />
                 );
               })}
