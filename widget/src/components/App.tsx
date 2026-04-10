@@ -65,7 +65,7 @@ export default function App({ apiBase }: Props) {
             <SiteDetailsDrawer item={selected} />
             <TimeseriesChart apiBase={apiBase} siteId={selectedId} siteName={selected?.site.name ?? "Selected Site"} />
           </div>
-          <Disclaimer />
+          <Disclaimer apiBase={apiBase} items={sorted} />
         </>
       )}
     </div>

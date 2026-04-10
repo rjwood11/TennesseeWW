@@ -43,12 +43,12 @@
 }
 
 .tnww-site-marker-halo {
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.8));
+  filter: drop-shadow(0 0 8px rgba(125, 211, 252, 0.95)) drop-shadow(0 0 16px rgba(96, 165, 250, 0.85));
   animation: tnww-marker-pulse 1.8s ease-in-out infinite;
 }
 
 .tnww-site-marker-selected {
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+  filter: drop-shadow(0 0 6px rgba(125, 211, 252, 0.95)) drop-shadow(0 0 12px rgba(96, 165, 250, 0.75));
 }
 
 @keyframes tnww-marker-pulse {
@@ -213,6 +213,40 @@
 .tnww-disclaimer {
   margin-top: 10px;
   font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.tnww-disclaimer-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #0f766e;
+  background: #ffffff;
+  color: #0f766e;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tnww-disclaimer-action:hover:not(:disabled) {
+  background: #ecfeff;
+}
+
+.tnww-disclaimer-action:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.tnww-disclaimer-error {
+  width: 100%;
+  color: #b91c1c;
+  font-size: 0.78rem;
 }
 
 .tnww-loading,
