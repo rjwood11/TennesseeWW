@@ -1,4 +1,4 @@
-﻿version: 1
+version: 1
 # TNWW model config notes:
 # - This is the only file you should edit to change model behavior.
 # - One model key must exist for every site id in config/sites.json.
@@ -6,45 +6,15 @@
 #   - formula: evaluates the expression string with the safe evaluator.
 # - Set enabled: false and expression: "null" to disable a model.
 #
-# FULL list of allowed predictor variables (for required + expression):
-# - flow
-# - gage
-# - rain_1d
-# - rain_2d
-# - rain_3d
-# - rain_5d
-# - rain_7d
-# - sindoy
-# - temp_24h_mean
-# - temp_24h_min
-# - temp_24h_max
-# - relative_humidity_24h_mean
-# - relative_humidity_24h_min
-# - relative_humidity_24h_max
-# - dew_point_24h_mean
-# - dew_point_24h_min
-# - dew_point_24h_max
-# - apparent_temp_24h_mean
-# - apparent_temp_24h_min
-# - apparent_temp_24h_max
-# - pressure_msl_24h_mean
-# - pressure_msl_24h_min
-# - pressure_msl_24h_max
-# - surface_pressure_24h_mean
-# - surface_pressure_24h_min
-# - surface_pressure_24h_max
-# - cloud_cover_24h_mean
-# - cloud_cover_24h_min
-# - cloud_cover_24h_max
-# - wind_speed_24h_mean
-# - wind_speed_24h_min
-# - wind_speed_24h_max
-# - wind_gust_24h_mean
-# - wind_gust_24h_min
-# - wind_gust_24h_max
-#
-# Copy/paste required example (all predictors):
-# required: [flow, gage, rain_1d, rain_2d, rain_3d, rain_5d, rain_7d, sindoy, temp_24h_mean, temp_24h_min, temp_24h_max, relative_humidity_24h_mean, relative_humidity_24h_min, relative_humidity_24h_max, dew_point_24h_mean, dew_point_24h_min, dew_point_24h_max, apparent_temp_24h_mean, apparent_temp_24h_min, apparent_temp_24h_max, pressure_msl_24h_mean, pressure_msl_24h_min, pressure_msl_24h_max, surface_pressure_24h_mean, surface_pressure_24h_min, surface_pressure_24h_max, cloud_cover_24h_mean, cloud_cover_24h_min, cloud_cover_24h_max, wind_speed_24h_mean, wind_speed_24h_min, wind_speed_24h_max, wind_gust_24h_mean, wind_gust_24h_min, wind_gust_24h_max]
+# Allowed predictor variables (for required + expression):
+# - flow      : USGS discharge (cfs)
+# - gage      : USGS gage height (ft)
+# - rain_1d   : rain in past 24 hours (inches)
+# - rain_2d   : rain in past 2 days (inches)
+# - rain_3d   : rain in past 3 days (inches)
+# - rain_5d   : rain in past 5 days (inches)
+# - rain_7d   : rain in past 7 days (inches)
+# - sindoy    : seasonal sine day-of-year feature
 #
 # Allowed expression functions:
 # - ln(x), log10(x), exp(x), sqrt(x), abs(x), min(a,b), max(a,b)
@@ -87,7 +57,7 @@ models:
     enabled: true
     model_type: formula
     required: [flow, rain_2d, sindoy]
-    expression: "294.9 - 115.9*sindoy + 3.068e-05*((flow*rain_2d)^2)"
+    expression: "294.9 - 115.9*sindoy + 3.067e-05*((flow*rain_2d)^2)"
 
   millgreenway:
     enabled: true
@@ -118,32 +88,32 @@ models:
   browns:
     enabled: true
     model_type: formula
-    required: [flow,rain_2d]
+    required: [flow, rain_2d]
     expression: "601.1 - 0.1464*(flow^2) + 257.9*(rain_2d)"
 
   whites:
     enabled: true
     model_type: formula
-    required: [rain_2d, ]
-    expression: "-335.7 + 26.93*(wind_gust_24h_mean) + 587.4*(rain_2d^2)"
+    required: [flow, rain_2d]
+    expression: "-335.7 + 26.93 + 587.4*(SQUARE(rain_2d))"
 
   cumberland:
     enabled: true
     model_type: formula
-    required: [flow, wind_speed_24h_mean]
-    expression: "-116.3 + 3070*(1/(wind_speed_24h_mean * 3.3125)) + 0.006913*(flow)"
+    required: [flow]
+    expression: "-116.3 + 3070*(1/3.3125) + 0.006913*(flow)"
 
   walterhill:
     enabled: true
     model_type: formula
-    required: [flow, relative_humidity_24h_mean]
-    expression: "-865 + 5.891e-05*(flow^2) + 15.58*(relative_humidity_24h_mean)"
+    required: [flow]
+    expression: "-865 + 5.891e-05*(flow^2) + 15.58"
 
   centerville:
     enabled: true
     model_type: formula
-    required: [flow, temp_24h_mean]
-    expression: "179.1 - 0.4369*(temp_24h_mean^2) + 0.2326*(flow)"
+    required: [flow]
+    expression: "179.1 - 0.4369 + 0.2326*(flow)"
 
   cottonwood:
     enabled: true
