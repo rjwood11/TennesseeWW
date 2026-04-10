@@ -32,7 +32,7 @@ Open PowerShell in this folder:
 Run once (replace with your repo URL):
 
 ```powershell
-.\push-to-github.ps1 -RemoteUrl https://github.com/<OWNER>/<REPO>.git -CommitMessage "Initial sync"
+.\push-to-github.ps1 -RemoteUrl https://github.com/rjwood11/TennesseeWW.git -CommitMessage "Initial sync"
 ```
 
 This first run will:
