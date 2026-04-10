@@ -42,6 +42,25 @@
   overflow: hidden;
 }
 
+.tnww-site-marker-halo {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.8));
+  animation: tnww-marker-pulse 1.8s ease-in-out infinite;
+}
+
+.tnww-site-marker-selected {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+}
+
+@keyframes tnww-marker-pulse {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 .tnww-list {
   max-height: 560px;
   overflow-y: auto;
@@ -88,6 +107,88 @@
 
 .tnww-drivers {
   margin-top: 8px;
+}
+
+.tnww-flow-chart {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #dbe5ec;
+}
+
+.tnww-flow-chart h4 {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+}
+
+.tnww-flow-chart-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tnww-flow-chart-empty {
+  margin-top: 10px;
+  padding: 12px 8px;
+  border-top: 1px solid #dbe5ec;
+  color: #475569;
+  font-size: 0.82rem;
+}
+
+.tnww-flow-grid {
+  stroke: #d5e0e8;
+  stroke-width: 1;
+}
+
+.tnww-flow-axis-line {
+  stroke: #64748b;
+  stroke-width: 1;
+}
+
+.tnww-flow-axis-text {
+  fill: #475569;
+  font-size: 9px;
+}
+
+.tnww-flow-axis-title {
+  fill: #1f2937;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.tnww-flow-line {
+  fill: none;
+  stroke: #0f766e;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tnww-flow-point {
+  fill: #0f766e;
+  stroke: #ffffff;
+  stroke-width: 1.4;
+}
+
+.tnww-flow-point.latest {
+  fill: #f8fafc;
+  stroke: #0f766e;
+  stroke-width: 2.2;
+}
+
+.tnww-flow-latest-halo {
+  fill: rgba(15, 118, 110, 0.18);
+  stroke: rgba(15, 118, 110, 0.28);
+  stroke-width: 1.2;
+}
+
+.tnww-flow-chart-caption {
+  margin-top: 4px;
+  color: #334155;
+  font-size: 0.76rem;
+}
+
+.tnww-flow-chart-caption-time {
+  color: #64748b;
 }
 
 .tnww-legend {

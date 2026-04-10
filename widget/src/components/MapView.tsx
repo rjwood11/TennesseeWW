@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { Fragment, useEffect, useMemo } from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
 import { CircleMarker, MapContainer, TileLayer, Tooltip } from "react-leaflet";
@@ -55,17 +55,45 @@ export default function MapView({ items, selectedId, onSelect }: Props) {
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; OpenStreetMap contributors" />
       <FitToSites items={items} />
       <FocusOnSelected items={items} selectedId={selectedId} />
-      {items.map((item) => (
-        <CircleMarker
-          key={item.site.id}
-          center={[item.site.lat, item.site.lon]}
-          radius={selectedId === item.site.id ? 9 : 7}
-          pathOptions={{ color: "#000000", weight: 0.7, fillColor: COLOR_BY_STATUS[item.status], fillOpacity: 0.9 }}
-          eventHandlers={{ click: () => onSelect(item.site.id) }}
-        >
-          <Tooltip>{item.site.name}</Tooltip>
-        </CircleMarker>
-      ))}
+      {items.map((item) => {
+        const isSelected = selectedId === item.site.id;
+        const center: [number, number] = [item.site.lat, item.site.lon];
+
+        return (
+          <Fragment key={item.site.id}>
+            {isSelected ? (
+              <CircleMarker
+                center={center}
+                radius={13}
+                className="tnww-site-marker-halo"
+                pathOptions={{
+                  color: "#ffffff",
+                  weight: 1.5,
+                  opacity: 0.95,
+                  fillColor: COLOR_BY_STATUS[item.status],
+                  fillOpacity: 0.22,
+                }}
+                eventHandlers={{ click: () => onSelect(item.site.id) }}
+              />
+            ) : null}
+            <CircleMarker
+              center={center}
+              radius={isSelected ? 9.5 : 7}
+              className={isSelected ? "tnww-site-marker tnww-site-marker-selected" : "tnww-site-marker"}
+              pathOptions={{
+                color: isSelected ? "#ffffff" : "#000000",
+                weight: isSelected ? 2.4 : 0.7,
+                opacity: 1,
+                fillColor: COLOR_BY_STATUS[item.status],
+                fillOpacity: isSelected ? 1 : 0.9,
+              }}
+              eventHandlers={{ click: () => onSelect(item.site.id) }}
+            >
+              <Tooltip>{item.site.name}</Tooltip>
+            </CircleMarker>
+          </Fragment>
+        );
+      })}
     </MapContainer>
   );
 }
