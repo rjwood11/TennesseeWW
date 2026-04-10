@@ -58,9 +58,10 @@ export default function MapView({ items, selectedId, onSelect }: Props) {
       {items.map((item) => {
         const isSelected = selectedId === item.site.id;
         const center: [number, number] = [item.site.lat, item.site.lon];
+        const markerStateKey = `${item.site.id}-${isSelected ? "selected" : "default"}`;
 
         return (
-          <Fragment key={item.site.id}>
+          <Fragment key={markerStateKey}>
             {isSelected ? (
               <CircleMarker
                 center={center}
