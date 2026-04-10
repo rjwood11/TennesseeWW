@@ -62,7 +62,7 @@ export default function App({ apiBase }: Props) {
             <SiteList items={sorted} selectedId={selectedId} onSelect={setSelectedId} />
           </div>
           <div className="tnww-bottom">
-            <SiteDetailsDrawer item={selected} apiBase={apiBase} />
+            <SiteDetailsDrawer item={selected} />
             <TimeseriesChart apiBase={apiBase} siteId={selectedId} siteName={selected?.site.name ?? "Selected Site"} />
           </div>
           <Disclaimer />

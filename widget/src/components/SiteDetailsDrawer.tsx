@@ -1,16 +1,26 @@
 import { useEffect, useMemo, useState } from "react";
-import { fetchTimeseries } from "../api/client";
-import type { ForecastItem, TimeseriesItem } from "../api/types";
+import type { ForecastItem } from "../api/types";
 
 interface Props {
   item: ForecastItem | null;
-  apiBase: string;
 }
 
 interface FlowPoint {
-  date: string;
+  timestamp: string;
   flow: number;
-  computedAt: string;
+}
+
+interface UsgsIvResponse {
+  value?: {
+    timeSeries?: Array<{
+      values?: Array<{
+        value?: Array<{
+          value?: string;
+          dateTime?: string;
+        }>;
+      }>;
+    }>;
+  };
 }
 
 function val(v: number | null | undefined): string {
@@ -43,7 +53,7 @@ function formatSampleValue(value: number | null): string {
 }
 
 function formatAxisDate(value: string): string {
-  const date = new Date(`${value}T00:00:00`);
+  const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
   return `${date.getMonth() + 1}/${date.getDate()}`;
 }
@@ -54,28 +64,37 @@ function formatLatestTimestamp(value: string): string {
   return date.toLocaleString();
 }
 
-function flowPointsFromTimeseries(items: TimeseriesItem[]): FlowPoint[] {
-  const byDate = new Map<string, { flow: number; computedAt: string }>();
+async function fetchUsgsFlowHistory(siteNo: string): Promise<FlowPoint[]> {
+  const params = new URLSearchParams({
+    format: "json",
+    sites: siteNo,
+    parameterCd: "00060",
+    period: "P7D",
+    siteStatus: "all",
+  });
+  const response = await fetch(`https://waterservices.usgs.gov/nwis/iv/?${params.toString()}`, {
+    headers: { Accept: "application/json" },
+  });
 
-  for (const item of items) {
-    const flow = asNumber(item.drivers.flow);
-    if (flow === null) continue;
-
-    const date = item.computed_at.slice(0, 10);
-    const existing = byDate.get(date);
-    if (!existing || item.computed_at > existing.computedAt) {
-      byDate.set(date, { flow, computedAt: item.computed_at });
-    }
+  if (!response.ok) {
+    throw new Error(`USGS flow request failed: ${response.status}`);
   }
 
-  return Array.from(byDate.entries())
-    .map(([date, point]) => ({ date, flow: point.flow, computedAt: point.computedAt }))
-    .sort((a, b) => a.date.localeCompare(b.date))
-    .slice(-7);
+  const data = (await response.json()) as UsgsIvResponse;
+  const values = data.value?.timeSeries?.flatMap((series) => series.values ?? []) ?? [];
+  const points = values.flatMap((entry) => entry.value ?? []);
+
+  return points
+    .map((point) => {
+      const flow = Number(point.value);
+      return point.dateTime && Number.isFinite(flow) ? { timestamp: point.dateTime, flow } : null;
+    })
+    .filter((point): point is FlowPoint => point !== null)
+    .sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
 }
 
-function FlowHistoryChart({ apiBase, siteId, siteName }: { apiBase: string; siteId: string; siteName: string }) {
-  const [history, setHistory] = useState<TimeseriesItem[]>([]);
+function FlowHistoryChart({ siteNo, siteName }: { siteNo: string; siteName: string }) {
+  const [history, setHistory] = useState<FlowPoint[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -84,10 +103,10 @@ function FlowHistoryChart({ apiBase, siteId, siteName }: { apiBase: string; site
     setLoading(true);
     setError(null);
 
-    fetchTimeseries(apiBase, siteId, 30)
-      .then((data) => {
+    fetchUsgsFlowHistory(siteNo)
+      .then((points) => {
         if (!active) return;
-        setHistory(data.items ?? []);
+        setHistory(points);
       })
       .catch((e: Error) => {
         if (!active) return;
@@ -100,12 +119,10 @@ function FlowHistoryChart({ apiBase, siteId, siteName }: { apiBase: string; site
     return () => {
       active = false;
     };
-  }, [apiBase, siteId]);
-
-  const points = useMemo(() => flowPointsFromTimeseries(history), [history]);
+  }, [siteNo]);
 
   const chart = useMemo(() => {
-    if (points.length === 0) return null;
+    if (history.length === 0) return null;
 
     const width = 360;
     const height = 180;
@@ -115,19 +132,37 @@ function FlowHistoryChart({ apiBase, siteId, siteName }: { apiBase: string; site
     const bottom = 36;
     const plotWidth = width - left - right;
     const plotHeight = height - top - bottom;
-    const flows = points.map((point) => point.flow);
+    const times = history.map((point) => new Date(point.timestamp).getTime());
+    const flows = history.map((point) => point.flow);
+    const xMin = times[0];
+    const xMax = times[times.length - 1];
+    const xSpan = Math.max(1, xMax - xMin);
     const minFlow = Math.min(...flows);
     const maxFlow = Math.max(...flows);
     const padding = Math.max(5, (maxFlow - minFlow) * 0.12);
     const yMin = Math.max(0, minFlow - padding);
     const yMax = maxFlow + padding;
     const ySpan = Math.max(1, yMax - yMin);
-    const x = (index: number) => left + (points.length === 1 ? plotWidth / 2 : (index / (points.length - 1)) * plotWidth);
+    const x = (time: number) => left + ((time - xMin) / xSpan) * plotWidth;
     const y = (flow: number) => top + ((yMax - flow) / ySpan) * plotHeight;
-    const linePoints = points.map((point, index) => `${x(index)},${y(point.flow)}`).join(" ");
-    const latestIndex = points.length - 1;
-    const latestPoint = points[latestIndex];
+    const linePoints = history.map((point) => `${x(new Date(point.timestamp).getTime())},${y(point.flow)}`).join(" ");
+    const latestPoint = history[history.length - 1];
+    const latestX = x(new Date(latestPoint.timestamp).getTime());
+    const latestY = y(latestPoint.flow);
     const tickValues = Array.from({ length: 4 }, (_, index) => yMin + (index / 3) * ySpan).reverse();
+    const startDate = new Date(history[0].timestamp);
+    const endDate = new Date(latestPoint.timestamp);
+    const dayTicks: string[] = [];
+    const tickCursor = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+
+    while (tickCursor <= endDate) {
+      dayTicks.push(new Date(tickCursor).toISOString());
+      tickCursor.setDate(tickCursor.getDate() + 1);
+    }
+
+    if (dayTicks.length === 0 || dayTicks[dayTicks.length - 1].slice(0, 10) !== endDate.toISOString().slice(0, 10)) {
+      dayTicks.push(endDate.toISOString());
+    }
 
     return {
       width,
@@ -137,15 +172,16 @@ function FlowHistoryChart({ apiBase, siteId, siteName }: { apiBase: string; site
       top,
       bottom,
       plotHeight,
-      points,
       tickValues,
       linePoints,
-      latestIndex,
       latestPoint,
+      latestX,
+      latestY,
       x,
       y,
+      dayTicks,
     };
-  }, [points]);
+  }, [history]);
 
   if (loading) return <div className="tnww-flow-chart-empty">Loading gage flow...</div>;
   if (error) return <div className="tnww-flow-chart-empty">Flow history unavailable.</div>;
@@ -168,6 +204,19 @@ function FlowHistoryChart({ apiBase, siteId, siteName }: { apiBase: string; site
             </text>
           </g>
         ))}
+        {chart.dayTicks.map((tick) => {
+          const tickTime = new Date(tick).getTime();
+          const tickX = chart.x(tickTime);
+
+          return (
+            <g key={`flow-x-${tick}`}>
+              <line x1={tickX} y1={chart.top} x2={tickX} y2={chart.height - chart.bottom} className="tnww-flow-grid vertical" />
+              <text x={tickX} y={chart.height - chart.bottom + 16} textAnchor="middle" className="tnww-flow-axis-text">
+                {formatAxisDate(tick)}
+              </text>
+            </g>
+          );
+        })}
         <line x1={chart.left} y1={chart.top} x2={chart.left} y2={chart.height - chart.bottom} className="tnww-flow-axis-line" />
         <line
           x1={chart.left}
@@ -177,21 +226,8 @@ function FlowHistoryChart({ apiBase, siteId, siteName }: { apiBase: string; site
           className="tnww-flow-axis-line"
         />
         <polyline points={chart.linePoints} className="tnww-flow-line" />
-        {chart.points.map((point, index) => {
-          const cx = chart.x(index);
-          const cy = chart.y(point.flow);
-          const isLatest = index === chart.latestIndex;
-
-          return (
-            <g key={`flow-point-${point.date}`}>
-              {isLatest ? <circle cx={cx} cy={cy} r="7" className="tnww-flow-latest-halo" /> : null}
-              <circle cx={cx} cy={cy} r={isLatest ? "4.5" : "3.2"} className={isLatest ? "tnww-flow-point latest" : "tnww-flow-point"} />
-              <text x={cx} y={chart.height - chart.bottom + 16} textAnchor="middle" className="tnww-flow-axis-text">
-                {formatAxisDate(point.date)}
-              </text>
-            </g>
-          );
-        })}
+        <circle cx={chart.latestX} cy={chart.latestY} r="7" className="tnww-flow-latest-halo" />
+        <circle cx={chart.latestX} cy={chart.latestY} r="4.5" className="tnww-flow-point latest" />
         <text
           x={18}
           y={chart.top + chart.plotHeight / 2}
@@ -207,13 +243,13 @@ function FlowHistoryChart({ apiBase, siteId, siteName }: { apiBase: string; site
       </svg>
       <div className="tnww-flow-chart-caption">
         Latest flow: {val(chart.latestPoint.flow)} cfs
-        <span className="tnww-flow-chart-caption-time"> measured {formatLatestTimestamp(chart.latestPoint.computedAt)}</span>
+        <span className="tnww-flow-chart-caption-time"> measured {formatLatestTimestamp(chart.latestPoint.timestamp)}</span>
       </div>
     </div>
   );
 }
 
-export default function SiteDetailsDrawer({ item, apiBase }: Props) {
+export default function SiteDetailsDrawer({ item }: Props) {
   if (!item) return <div className="tnww-drawer">Select a site for details.</div>;
 
   return (
@@ -247,7 +283,7 @@ export default function SiteDetailsDrawer({ item, apiBase }: Props) {
           View USGS Gauge {item.gauge.usgs_site_no}
         </a>
       </p>
-      <FlowHistoryChart apiBase={apiBase} siteId={item.site.id} siteName={item.site.name} />
+      <FlowHistoryChart siteNo={item.gauge.usgs_site_no} siteName={item.site.name} />
     </div>
   );
 }
