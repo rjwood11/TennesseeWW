@@ -13,7 +13,7 @@ on:
       - ".github/workflows/pages-static.yml"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -51,6 +51,18 @@ jobs:
           TNWW_OPENMETEO_LAT: "36.0598"
           TNWW_OPENMETEO_LON: "-86.8291"
         run: python api/scripts/export_static_api.py --output-dir widget/public/static-api
+
+      - name: Commit refreshed static API payloads
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add widget/public/static-api
+          if git diff --cached --quiet; then
+            echo "No static API changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: refresh static API payloads [skip ci]"
+          git push origin HEAD:main
 
       - name: Install widget deps
         working-directory: widget
