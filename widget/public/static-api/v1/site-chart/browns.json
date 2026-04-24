@@ -291,7 +291,7 @@
     },
     {
       "sample_date": "2022-06-14",
-      "pred_ecoli": 623,
+      "pred_ecoli": 628,
       "status": "Caution"
     },
     {
@@ -356,12 +356,12 @@
     },
     {
       "sample_date": "2023-06-13",
-      "pred_ecoli": 597,
+      "pred_ecoli": 598,
       "status": "Caution"
     },
     {
       "sample_date": "2023-06-20",
-      "pred_ecoli": 757,
+      "pred_ecoli": 856,
       "status": "Warning"
     },
     {
@@ -416,7 +416,7 @@
     },
     {
       "sample_date": "2024-06-26",
-      "pred_ecoli": 1057,
+      "pred_ecoli": 995,
       "status": "Warning"
     },
     {
