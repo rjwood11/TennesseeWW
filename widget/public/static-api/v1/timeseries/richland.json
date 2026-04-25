@@ -5,7 +5,7 @@
     {
       "id": 301,
       "site_id": "richland",
-      "computed_at": "2026-04-25T11:02:56.490474+00:00",
+      "computed_at": "2026-04-25T11:53:42.121252+00:00",
       "pred_ecoli": 514,
       "status": "Caution",
       "drivers": {
