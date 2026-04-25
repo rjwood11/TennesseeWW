@@ -5,12 +5,12 @@
     {
       "id": 308,
       "site_id": "cottonwood",
-      "computed_at": "2026-04-25T19:10:42.750158+00:00",
-      "pred_ecoli": 121,
+      "computed_at": "2026-04-25T19:53:31.471095+00:00",
+      "pred_ecoli": 120,
       "status": "Safe",
       "drivers": {
-        "flow": 69.08,
-        "gage": 1.362,
+        "flow": 68.6,
+        "gage": 1.36,
         "rain_1d": 0.27559055118,
         "rain_2d": 0.27952755905400006,
         "rain_3d": 0.27952755905400006,
