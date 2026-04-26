@@ -5,7 +5,7 @@
     {
       "id": 302,
       "site_id": "whitsett",
-      "computed_at": "2026-04-26T11:02:27.019659+00:00",
+      "computed_at": "2026-04-26T11:54:58.775633+00:00",
       "pred_ecoli": 89,
       "status": "Safe",
       "drivers": {
@@ -34,7 +34,7 @@
         "surface_pressure_24h_mean": 983.4512195121952,
         "surface_pressure_24h_min": 981.0,
         "surface_pressure_24h_max": 986.5,
-        "cloud_cover_24h_mean": 46.146341463414636,
+        "cloud_cover_24h_mean": 55.48780487804878,
         "cloud_cover_24h_min": 0.0,
         "cloud_cover_24h_max": 100.0,
         "wind_speed_24h_mean": 6.5560975609756085,
