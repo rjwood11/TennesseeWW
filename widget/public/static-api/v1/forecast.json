@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T15:00:59.242698Z",
+  "generated_at": "2026-04-26T15:56:55.174308Z",
   "items": [
     {
       "site": {
@@ -19,13 +19,13 @@
         "label": "Hwy100",
         "usgs_site_no": "03433500"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
-      "observed_at_usgs": "2026-04-26T09:30:00-05:00",
+      "computed_at": "2026-04-26T15:56:55.174308Z",
+      "observed_at_usgs": "2026-04-26T10:30:00-05:00",
       "pred_ecoli": 133,
       "status": "Safe",
       "drivers": {
-        "flow": 64.36,
-        "gage": 1.342,
+        "flow": 62.98,
+        "gage": 1.336,
         "rain_1d": 0.35433070866,
         "rain_2d": 0.5669291338560001,
         "rain_3d": 0.5669291338560001,
@@ -90,8 +90,8 @@
         "label": "Hwy70",
         "usgs_site_no": "03434500"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
-      "observed_at_usgs": "2026-04-26T09:00:00-05:00",
+      "computed_at": "2026-04-26T15:56:55.174308Z",
+      "observed_at_usgs": "2026-04-26T10:00:00-05:00",
       "pred_ecoli": -12,
       "status": "Safe",
       "drivers": {
@@ -161,7 +161,7 @@
         "label": "JBlvd",
         "usgs_site_no": "03431700"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
+      "computed_at": "2026-04-26T15:56:55.174308Z",
       "observed_at_usgs": "2026-04-26T09:45:00-05:00",
       "pred_ecoli": 314,
       "status": "Advisory",
@@ -232,13 +232,13 @@
         "label": "LPike",
         "usgs_site_no": "03432350"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
-      "observed_at_usgs": "2026-04-26T09:15:00-05:00",
+      "computed_at": "2026-04-26T15:56:55.174308Z",
+      "observed_at_usgs": "2026-04-26T10:15:00-05:00",
       "pred_ecoli": 186,
       "status": "Safe",
       "drivers": {
-        "flow": 22.64,
-        "gage": 3.518,
+        "flow": 22.8,
+        "gage": 3.52,
         "rain_1d": 0.35433070866,
         "rain_2d": 0.5669291338560001,
         "rain_3d": 0.5669291338560001,
@@ -303,13 +303,13 @@
         "label": "MCreek",
         "usgs_site_no": "03431060"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
-      "observed_at_usgs": "2026-04-26T09:00:00-05:00",
-      "pred_ecoli": 58,
+      "computed_at": "2026-04-26T15:56:55.174308Z",
+      "observed_at_usgs": "2026-04-26T10:00:00-05:00",
+      "pred_ecoli": 56,
       "status": "Safe",
       "drivers": {
-        "flow": 11.68,
-        "gage": 2.418,
+        "flow": 11.44,
+        "gage": 2.414,
         "rain_1d": 0.35433070866,
         "rain_2d": 0.5669291338560001,
         "rain_3d": 0.5669291338560001,
@@ -374,13 +374,13 @@
         "label": "Hwy100",
         "usgs_site_no": "03433500"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
-      "observed_at_usgs": "2026-04-26T09:30:00-05:00",
-      "pred_ecoli": 130,
+      "computed_at": "2026-04-26T15:56:55.174308Z",
+      "observed_at_usgs": "2026-04-26T10:30:00-05:00",
+      "pred_ecoli": 128,
       "status": "Safe",
       "drivers": {
-        "flow": 64.36,
-        "gage": 1.342,
+        "flow": 62.98,
+        "gage": 1.336,
         "rain_1d": 0.35433070866,
         "rain_2d": 0.5669291338560001,
         "rain_3d": 0.5669291338560001,
@@ -445,7 +445,7 @@
         "label": "JBlvd",
         "usgs_site_no": "03431700"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
+      "computed_at": "2026-04-26T15:56:55.174308Z",
       "observed_at_usgs": "2026-04-26T09:45:00-05:00",
       "pred_ecoli": 498,
       "status": "Caution",
@@ -516,13 +516,13 @@
         "label": "MCreek",
         "usgs_site_no": "03431060"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
-      "observed_at_usgs": "2026-04-26T09:00:00-05:00",
-      "pred_ecoli": 85,
+      "computed_at": "2026-04-26T15:56:55.174308Z",
+      "observed_at_usgs": "2026-04-26T10:00:00-05:00",
+      "pred_ecoli": 83,
       "status": "Safe",
       "drivers": {
-        "flow": 11.68,
-        "gage": 2.418,
+        "flow": 11.44,
+        "gage": 2.414,
         "rain_1d": 0.35433070866,
         "rain_2d": 0.5669291338560001,
         "rain_3d": 0.5669291338560001,
@@ -587,8 +587,8 @@
         "label": "Browns",
         "usgs_site_no": "03431300"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
-      "observed_at_usgs": "2026-04-26T09:00:00-05:00",
+      "computed_at": "2026-04-26T15:56:55.174308Z",
+      "observed_at_usgs": "2026-04-26T10:00:00-05:00",
       "pred_ecoli": 742,
       "status": "Caution",
       "drivers": {
@@ -658,13 +658,13 @@
         "label": "Whites",
         "usgs_site_no": "03431599"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
-      "observed_at_usgs": "2026-04-26T09:30:00-05:00",
+      "computed_at": "2026-04-26T15:56:55.174308Z",
+      "observed_at_usgs": "2026-04-26T10:30:00-05:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 5.966,
-        "gage": 4.342,
+        "flow": 6.458,
+        "gage": 4.352,
         "rain_1d": 0.35433070866,
         "rain_2d": 0.5669291338560001,
         "rain_3d": 0.5669291338560001,
@@ -729,13 +729,13 @@
         "label": "Cumberland",
         "usgs_site_no": "03431500"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
-      "observed_at_usgs": "2026-04-26T09:30:00-05:00",
-      "pred_ecoli": 839,
+      "computed_at": "2026-04-26T15:56:55.174308Z",
+      "observed_at_usgs": "2026-04-26T10:30:00-05:00",
+      "pred_ecoli": 844,
       "status": "Warning",
       "drivers": {
-        "flow": 4158.0,
-        "gage": 17.69,
+        "flow": 4876.0,
+        "gage": 17.712,
         "rain_1d": 0.35433070866,
         "rain_2d": 0.5669291338560001,
         "rain_3d": 0.5669291338560001,
@@ -800,13 +800,13 @@
         "label": "Stones",
         "usgs_site_no": "03430200"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
-      "observed_at_usgs": "2026-04-26T09:00:00-05:00",
+      "computed_at": "2026-04-26T15:56:55.174308Z",
+      "observed_at_usgs": "2026-04-26T10:00:00-05:00",
       "pred_ecoli": -849,
       "status": "Safe",
       "drivers": {
-        "flow": -1.4640000000000002,
-        "gage": 3.294,
+        "flow": -15.056,
+        "gage": 3.406,
         "rain_1d": 0.35433070866,
         "rain_2d": 0.5669291338560001,
         "rain_3d": 0.5669291338560001,
@@ -871,8 +871,8 @@
         "label": "Duck",
         "usgs_site_no": "03601990"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
-      "observed_at_usgs": "2026-04-26T09:00:00-05:00",
+      "computed_at": "2026-04-26T15:56:55.174308Z",
+      "observed_at_usgs": "2026-04-26T10:00:00-05:00",
       "pred_ecoli": 298,
       "status": "Advisory",
       "drivers": {
@@ -942,13 +942,13 @@
         "label": "Hwy100",
         "usgs_site_no": "03433500"
       },
-      "computed_at": "2026-04-26T15:00:59.242698Z",
-      "observed_at_usgs": "2026-04-26T09:30:00-05:00",
-      "pred_ecoli": 112,
+      "computed_at": "2026-04-26T15:56:55.174308Z",
+      "observed_at_usgs": "2026-04-26T10:30:00-05:00",
+      "pred_ecoli": 110,
       "status": "Safe",
       "drivers": {
-        "flow": 64.36,
-        "gage": 1.342,
+        "flow": 62.98,
+        "gage": 1.336,
         "rain_1d": 0.35433070866,
         "rain_2d": 0.5669291338560001,
         "rain_3d": 0.5669291338560001,
