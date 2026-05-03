@@ -5,12 +5,12 @@
     {
       "id": 303,
       "site_id": "browns",
-      "computed_at": "2026-05-03T21:02:10.710569+00:00",
+      "computed_at": "2026-05-03T21:59:42.956494+00:00",
       "pred_ecoli": 595,
       "status": "Caution",
       "drivers": {
-        "flow": 9.59,
-        "gage": 1.87,
+        "flow": 9.442,
+        "gage": 1.866,
         "rain_1d": 0.01968503937,
         "rain_2d": 0.027559055118,
         "rain_3d": 0.027559055118,
