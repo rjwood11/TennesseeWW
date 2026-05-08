@@ -22,14 +22,20 @@ async function fetchJsonWithFallback<T>(
   label: string,
   allowFallback: (status: number) => boolean = (status) => status >= 400
 ): Promise<T> {
-  const preferredRes = await fetch(preferredUrl, { headers: { Accept: "application/json" } });
+  const preferredRes = await fetch(preferredUrl, {
+    cache: "no-store",
+    headers: { Accept: "application/json" },
+  });
   if (preferredRes.ok) return (await preferredRes.json()) as T;
 
   if (!allowFallback(preferredRes.status)) {
     throw new Error(`${label} request failed: ${preferredRes.status}`);
   }
 
-  const fallbackRes = await fetch(fallbackUrl, { headers: { Accept: "application/json" } });
+  const fallbackRes = await fetch(fallbackUrl, {
+    cache: "no-store",
+    headers: { Accept: "application/json" },
+  });
   if (fallbackRes.ok) return (await fallbackRes.json()) as T;
   throw new Error(`${label} request failed: ${preferredRes.status} (fallback ${fallbackRes.status})`);
 }

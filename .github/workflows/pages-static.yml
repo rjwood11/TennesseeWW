@@ -52,18 +52,6 @@ jobs:
           TNWW_OPENMETEO_LON: "-86.8291"
         run: python api/scripts/export_static_api.py --output-dir widget/public/static-api
 
-      - name: Commit refreshed static API payloads
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add widget/public/static-api
-          if git diff --cached --quiet; then
-            echo "No static API changes to commit."
-            exit 0
-          fi
-          git commit -m "chore: refresh static API payloads [skip ci]"
-          git push origin HEAD:main
-
       - name: Install widget deps
         working-directory: widget
         run: npm ci
@@ -71,6 +59,18 @@ jobs:
       - name: Build widget
         working-directory: widget
         run: npm run build
+
+      - name: Commit refreshed static payloads and built Pages assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add widget/public/static-api widget/dist
+          if git diff --cached --quiet; then
+            echo "No generated asset changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: refresh Pages data and assets [skip ci]"
+          git push origin HEAD:main
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

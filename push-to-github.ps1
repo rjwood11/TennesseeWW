@@ -53,6 +53,18 @@ function Has-Commit {
   return -not [string]::IsNullOrWhiteSpace($head)
 }
 
+function Get-PorcelainStatus {
+  $status = git status --porcelain
+  if ($LASTEXITCODE -ne 0) {
+    throw "Git command failed: git status --porcelain"
+  }
+  return [string]$status
+}
+
+function Has-WorkingTreeChanges {
+  return -not [string]::IsNullOrWhiteSpace((Get-PorcelainStatus))
+}
+
 Require-Command git
 
 $RepoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -91,17 +103,34 @@ if ([string]::IsNullOrWhiteSpace($currentBranch)) {
 }
 
 if (-not $SkipPull) {
-  Write-Host "Pulling latest from origin/$Branch (if branch exists)..."
+  $stashedForPull = $false
+  $pullStashName = "push-to-github pre-pull $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+  if (Has-WorkingTreeChanges) {
+    Write-Host "Stashing local changes before rebase..."
+    Invoke-Git @("stash", "push", "-u", "-m", $pullStashName)
+    $stashedForPull = $true
+  }
+
+  Write-Host "Pulling latest from origin/$Branch with rebase..."
   Invoke-Git @("pull", "--rebase", "origin", $Branch) -AllowFailure
   if ($LASTEXITCODE -ne 0) {
-    Write-Host "No remote branch yet, or pull needs manual resolution. Continuing..." -ForegroundColor Yellow
+    if ($stashedForPull) {
+      Write-Host "Restoring stashed local changes after failed rebase..."
+      Invoke-Git @("stash", "pop") -AllowFailure
+    }
+    throw "Pull/rebase from origin/$Branch failed. Resolve it manually, then rerun the script."
+  }
+
+  if ($stashedForPull) {
+    Write-Host "Restoring stashed local changes..."
+    Invoke-Git @("stash", "pop")
   }
 }
 
 Write-Host "Staging changes..."
 Invoke-Git @("add", "-A")
 
-$pending = git status --porcelain
+$pending = Get-PorcelainStatus
 if ([string]::IsNullOrWhiteSpace($pending)) {
   Write-Host "No local changes to commit."
   Write-Host "Pushing current branch to origin..."

@@ -52,4 +52,6 @@ Replace `YOUR-PAGES-HOST` with either:
 ## Notes
 - This is static hosting. The API endpoints are pre-generated JSON files.
 - Hourly schedule is best-effort on GitHub Actions and may not run exactly on the minute.
+- The widget fetches static JSON with `cache: no-store` so repeated visits do not keep stale browser-cached forecasts.
+- The workflow commits refreshed `widget/public/static-api` and `widget/dist` outputs back to `main`, keeping the repository view aligned with the deployed Pages site.
 - If a provider is temporarily unavailable, rerun the workflow manually.
