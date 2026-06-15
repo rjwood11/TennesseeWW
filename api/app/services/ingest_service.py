@@ -40,14 +40,22 @@ class IngestService:
             now_local = now_utc.astimezone(ZoneInfo(settings.timezone))
             gauge_stats_jobs = [fetch_usgs_flow_daily_stats(g.usgs_site_no, client, now_local) for g in gauges]
             gauge_stats_list = await asyncio.gather(*gauge_stats_jobs, return_exceptions=True)
-            rain_windows = await fetch_rain_windows(
-                settings.openmeteo_lat,
-                settings.openmeteo_lon,
-                settings.timezone,
-                client,
-                now_utc,
-            )
-            sampling_by_site = await fetch_sampling_latest(settings.dropbox_sampling_xlsx, sites, client)
+            try:
+                rain_windows = await fetch_rain_windows(
+                    settings.openmeteo_lat,
+                    settings.openmeteo_lon,
+                    settings.timezone,
+                    client,
+                    now_utc,
+                )
+            except Exception:  # noqa: BLE001
+                logger.exception("Open-Meteo fetch failed")
+                rain_windows = {}
+            try:
+                sampling_by_site = await fetch_sampling_latest(settings.dropbox_sampling_xlsx, sites, client)
+            except Exception:  # noqa: BLE001
+                logger.exception("Dropbox sampling fetch failed")
+                sampling_by_site = {}
 
         gauge_data: dict[str, dict] = {}
         gauge_flow_stats: dict[str, dict | None] = {}

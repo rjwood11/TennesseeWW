@@ -106,10 +106,10 @@ When you push a change to `main`:
 4. The workflow rebuilds the predictions, statuses, map data, and site files.
 5. GitHub Pages publishes the updated version of the app.
 
-This means model changes should take effect right after the workflow finishes. You do not need to wait for the next hourly update if you already pushed a model change.
+This means model changes should take effect right after the workflow finishes. You do not need to wait for the next scheduled update if you already pushed a model change.
 
-### What does the hourly update still do?
-Even if you do not change any code or models, GitHub still tries to refresh the site every hour so the latest data stays current.
+### What does the scheduled update still do?
+Even if you do not change any code or models, GitHub still tries to refresh the site every six hours so the latest data stays current.
 
 ### Short version
 If you change model math:

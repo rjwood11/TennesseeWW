@@ -3,7 +3,7 @@ name: Deploy GitHub Pages (Static TNWW)
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 * * * *"
+    - cron: "15 */6 * * *"
   push:
     branches: ["main"]
     paths:
@@ -26,17 +26,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: "20"
+          node-version: "24"
           cache: "npm"
           cache-dependency-path: "widget/package-lock.json"
 
@@ -46,7 +46,7 @@ jobs:
       - name: Generate static API payloads
         env:
           TNWW_CONFIG_DIR: ${{ github.workspace }}/config
-          TNWW_SQLITE_PATH: ${{ github.workspace }}/tnww.sqlite
+          TNWW_SQLITE_PATH: ${{ runner.temp }}/tnww.sqlite
           TNWW_TIMEZONE: America/Chicago
           TNWW_OPENMETEO_LAT: "36.0598"
           TNWW_OPENMETEO_LON: "-86.8291"
@@ -73,13 +73,13 @@ jobs:
           git push origin HEAD:main
 
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: widget/dist
 
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

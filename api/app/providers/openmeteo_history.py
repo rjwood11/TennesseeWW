@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import math
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
@@ -8,7 +9,10 @@ import httpx
 import pandas as pd
 
 from app.domain.features import MM_TO_IN
+from app.providers.http_retry import get_with_retries
 from app.providers.openmeteo import OPENMETEO_ARCHIVE_URL, OPENMETEO_24H_FEATURES, OPENMETEO_HOURLY_VARS
+
+logger = logging.getLogger(__name__)
 
 
 async def fetch_weather_daily_features(
@@ -27,9 +31,18 @@ async def fetch_weather_daily_features(
         "hourly": ",".join(OPENMETEO_HOURLY_VARS),
         "timezone": timezone_name,
     }
-    response = await client.get(OPENMETEO_ARCHIVE_URL, params=params, timeout=45)
-    response.raise_for_status()
-    payload = response.json()
+    try:
+        response = await get_with_retries(
+            client,
+            OPENMETEO_ARCHIVE_URL,
+            params=params,
+            timeout=45,
+            label="Open-Meteo historical weather fetch",
+        )
+        payload = response.json()
+    except (httpx.HTTPError, ValueError) as exc:
+        logger.warning("Open-Meteo historical weather fetch failed; continuing without weather history: %s", exc)
+        return {}
     hourly = payload.get("hourly", {})
     times = hourly.get("time", [])
     values = hourly.get("precipitation", [])

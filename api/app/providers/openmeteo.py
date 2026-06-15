@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
@@ -7,6 +8,9 @@ import httpx
 import pandas as pd
 
 from app.domain.features import MM_TO_IN
+from app.providers.http_retry import get_with_retries
+
+logger = logging.getLogger(__name__)
 
 
 OPENMETEO_ARCHIVE_URL = "https://archive-api.open-meteo.com/v1/archive"
@@ -56,9 +60,18 @@ async def fetch_rain_windows(
         "hourly": ",".join(OPENMETEO_HOURLY_VARS),
         "timezone": timezone_name,
     }
-    response = await client.get(OPENMETEO_ARCHIVE_URL, params=params, timeout=30)
-    response.raise_for_status()
-    payload = response.json()
+    try:
+        response = await get_with_retries(
+            client,
+            OPENMETEO_ARCHIVE_URL,
+            params=params,
+            timeout=30,
+            label="Open-Meteo rain window fetch",
+        )
+        payload = response.json()
+    except (httpx.HTTPError, ValueError) as exc:
+        logger.warning("Open-Meteo rain window fetch failed; continuing without rain features: %s", exc)
+        return {}
     hourly = payload.get("hourly", {})
     times = hourly.get("time", [])
     values = hourly.get("precipitation", [])

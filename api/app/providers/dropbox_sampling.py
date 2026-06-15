@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import re
 from io import BytesIO
 from datetime import date
@@ -9,6 +10,15 @@ import httpx
 import pandas as pd
 
 from app.domain.schemas import Site
+from app.providers.http_retry import get_with_retries
+
+logger = logging.getLogger(__name__)
+
+DROPBOX_HEADERS = {
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
+    "User-Agent": "Mozilla/5.0 (compatible; TNWW static exporter)",
+}
 
 
 def _normalize_name(name: str) -> str:
@@ -66,7 +76,12 @@ async def fetch_sampling_latest(dropbox_url: str, sites: list[Site], client: htt
 
 
 def _load_sampling_df(content: bytes) -> pd.DataFrame | None:
-    df = pd.read_excel(BytesIO(content))
+    try:
+        df = pd.read_excel(BytesIO(content))
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Could not parse Dropbox sampling workbook: %s", exc)
+        return None
+
     df.columns = [str(c).strip() for c in df.columns]
 
     date_col = _pick_column(df.columns.tolist(), ["date"])
@@ -130,17 +145,18 @@ async def _read_sampling_content(source: str, client: httpx.AsyncClient) -> byte
     if not source:
         return None
     if source.lower().startswith(("http://", "https://")):
-        response = await client.get(
-            source,
-            timeout=45,
-            follow_redirects=True,
-            headers={
-                "Cache-Control": "no-cache",
-                "Pragma": "no-cache",
-            },
-        )
-        response.raise_for_status()
-        return response.content
+        try:
+            response = await get_with_retries(
+                client,
+                source,
+                timeout=45,
+                headers=DROPBOX_HEADERS,
+                label="Dropbox sampling download",
+            )
+            return response.content
+        except httpx.HTTPError as exc:
+            logger.warning("Dropbox sampling download failed; continuing without sampling data: %s", exc)
+            return None
     path = Path(source)
     if path.exists() and path.is_file():
         return path.read_bytes()

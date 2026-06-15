@@ -1,9 +1,14 @@
 from __future__ import annotations
 
+import logging
 from datetime import date
 from typing import Any
 
 import httpx
+
+from app.providers.http_retry import get_with_retries
+
+logger = logging.getLogger(__name__)
 
 
 USGS_DV_URL = "https://waterservices.usgs.gov/nwis/dv/"
@@ -22,9 +27,18 @@ async def fetch_usgs_daily_values(
         "startDT": start_date.isoformat(),
         "endDT": end_date.isoformat(),
     }
-    response = await client.get(USGS_DV_URL, params=params, timeout=30)
-    response.raise_for_status()
-    payload = response.json()
+    try:
+        response = await get_with_retries(
+            client,
+            USGS_DV_URL,
+            params=params,
+            timeout=30,
+            label=f"USGS daily values fetch for {site_no}",
+        )
+        payload = response.json()
+    except (httpx.HTTPError, ValueError) as exc:
+        logger.warning("USGS daily values fetch failed for %s; continuing without daily values: %s", site_no, exc)
+        return {}
     series = payload.get("value", {}).get("timeSeries", [])
 
     per_day: dict[str, dict[str, float | None]] = {}
