@@ -31,7 +31,7 @@ try {
   $env:TNWW_TIMEZONE = "America/Chicago"
   $env:TNWW_OPENMETEO_LAT = "36.0598"
   $env:TNWW_OPENMETEO_LON = "-86.8291"
-  $env:TNWW_DROPBOX_SAMPLING_XLSX = "https://www.dropbox.com/scl/fi/8h7xqelfia41krdzqwq5k/HR-UpToDate.xlsx?rlkey=kb0287ib5qw3bv4qdzn3ue2v9&st=cur5pnc3&dl=1"
+  $env:TNWW_DROPBOX_SAMPLING_XLSX = "https://www.dropbox.com/scl/fi/ixjj9txmt1sj4ubulm70h/HR-UpToDate.xlsx?rlkey=hxyf4lnukpnh0zggwhf535z22&st=j0npivm4&dl=1"
 
   Write-Host "Starting API at http://localhost:$Port"
   Write-Host "Health: http://localhost:$Port/v1/health"

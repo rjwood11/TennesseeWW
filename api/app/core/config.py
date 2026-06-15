@@ -17,8 +17,8 @@ class Settings(BaseModel):
     openmeteo_lat: float = 36.0598
     openmeteo_lon: float = -86.8291
     dropbox_sampling_xlsx: str = (
-        "https://www.dropbox.com/scl/fi/8h7xqelfia41krdzqwq5k/HR-UpToDate.xlsx"
-        "?rlkey=kb0287ib5qw3bv4qdzn3ue2v9&st=cur5pnc3&dl=1"
+        "https://www.dropbox.com/scl/fi/ixjj9txmt1sj4ubulm70h/HR-UpToDate.xlsx"
+        "?rlkey=hxyf4lnukpnh0zggwhf535z22&st=j0npivm4&dl=1"
     )
     config_dir: Path = Path(__file__).resolve().parents[3] / "config"
 
@@ -33,8 +33,8 @@ def get_settings() -> Settings:
         dropbox_sampling_xlsx=os.getenv(
             "TNWW_DROPBOX_SAMPLING_XLSX",
             (
-                "https://www.dropbox.com/scl/fi/8h7xqelfia41krdzqwq5k/HR-UpToDate.xlsx"
-                "?rlkey=kb0287ib5qw3bv4qdzn3ue2v9&st=cur5pnc3&dl=1"
+                "https://www.dropbox.com/scl/fi/ixjj9txmt1sj4ubulm70h/HR-UpToDate.xlsx"
+                "?rlkey=hxyf4lnukpnh0zggwhf535z22&st=j0npivm4&dl=1"
             ),
         ),
         config_dir=Path(os.getenv("TNWW_CONFIG_DIR", str(Path(__file__).resolve().parents[3] / "config"))),

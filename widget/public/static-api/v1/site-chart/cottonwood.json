@@ -81,6 +81,16 @@
       "sample_date": "2025-09-29",
       "sample_value": 146.7,
       "status": "Safe"
+    },
+    {
+      "sample_date": "2026-06-03",
+      "sample_value": 52.6,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2026-06-10",
+      "sample_value": 105.0,
+      "status": "Safe"
     }
   ],
   "predicted": [
@@ -163,6 +173,16 @@
       "sample_date": "2025-09-29",
       "pred_ecoli": 306,
       "status": "Advisory"
+    },
+    {
+      "sample_date": "2026-06-03",
+      "pred_ecoli": 719,
+      "status": "Caution"
+    },
+    {
+      "sample_date": "2026-06-10",
+      "pred_ecoli": 428,
+      "status": "Caution"
     }
   ],
   "thresholds": {

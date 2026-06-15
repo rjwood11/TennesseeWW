@@ -130,7 +130,15 @@ async def _read_sampling_content(source: str, client: httpx.AsyncClient) -> byte
     if not source:
         return None
     if source.lower().startswith(("http://", "https://")):
-        response = await client.get(source, timeout=45, follow_redirects=True)
+        response = await client.get(
+            source,
+            timeout=45,
+            follow_redirects=True,
+            headers={
+                "Cache-Control": "no-cache",
+                "Pragma": "no-cache",
+            },
+        )
         response.raise_for_status()
         return response.content
     path = Path(source)
