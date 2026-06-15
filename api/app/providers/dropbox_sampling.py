@@ -21,8 +21,15 @@ DROPBOX_HEADERS = {
 }
 
 
-def _normalize_name(name: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "", name.lower())
+def _normalize_name(name: object) -> str:
+    if name is None:
+        return ""
+    try:
+        if pd.isna(name):
+            return ""
+    except (TypeError, ValueError):
+        pass
+    return re.sub(r"[^a-z0-9]+", "", str(name).lower())
 
 
 def _parse_sample_value(raw: object) -> float | None:
@@ -93,7 +100,7 @@ def _load_sampling_df(content: bytes) -> pd.DataFrame | None:
     data = df[[date_col, location_col, ecoli_col]].copy()
     data[date_col] = pd.to_datetime(data[date_col], errors="coerce")
     data["sample_value"] = data[ecoli_col].map(_parse_sample_value)
-    data["loc_norm"] = data[location_col].astype(str).map(_normalize_name)
+    data["loc_norm"] = data[location_col].map(_normalize_name)
     data = data.dropna(subset=[date_col]).sort_values(by=date_col, ascending=False)
     data = data.rename(columns={date_col: "sample_date"})
     return data[["sample_date", "sample_value", "loc_norm"]]
