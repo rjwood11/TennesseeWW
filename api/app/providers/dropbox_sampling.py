@@ -73,13 +73,26 @@ async def fetch_sampling_latest(dropbox_url: str, sites: list[Site], client: htt
             matches = df[df["loc_norm"].map(lambda x: target in x if isinstance(x, str) else False)]
         if matches.empty:
             continue
-        row = matches.iloc[0]
-        sample_date = row["sample_date"]
-        by_site[site.id] = {
-            "sample_date": sample_date.date().isoformat() if hasattr(sample_date, "date") else str(sample_date),
-            "sample_value": row["sample_value"] if pd.notna(row["sample_value"]) else None,
-        }
+        sample = _latest_reported_sample(matches)
+        if sample is not None:
+            by_site[site.id] = sample
     return by_site
+
+
+def _is_reported_sample_value(value: object) -> bool:
+    return isinstance(value, (int, float)) and pd.notna(value) and value != 0
+
+
+def _latest_reported_sample(matches: pd.DataFrame) -> dict | None:
+    reported = matches[matches["sample_value"].map(_is_reported_sample_value)]
+    if reported.empty:
+        return None
+    row = reported.iloc[0]
+    sample_date = row["sample_date"]
+    return {
+        "sample_date": sample_date.date().isoformat() if hasattr(sample_date, "date") else str(sample_date),
+        "sample_value": row["sample_value"],
+    }
 
 
 def _load_sampling_df(content: bytes) -> pd.DataFrame | None:
