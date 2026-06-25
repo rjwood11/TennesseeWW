@@ -806,23 +806,23 @@
     },
     {
       "sample_date": "2026-06-03",
-      "pred_ecoli": 711,
-      "status": "Caution"
+      "pred_ecoli": 774,
+      "status": "Warning"
     },
     {
       "sample_date": "2026-06-10",
-      "pred_ecoli": 375,
+      "pred_ecoli": 426,
       "status": "Caution"
     },
     {
       "sample_date": "2026-06-17",
-      "pred_ecoli": 228,
-      "status": "Safe"
+      "pred_ecoli": 271,
+      "status": "Advisory"
     },
     {
       "sample_date": "2026-06-24",
-      "pred_ecoli": 344,
-      "status": "Advisory"
+      "pred_ecoli": 394,
+      "status": "Caution"
     }
   ],
   "thresholds": {
