@@ -226,6 +226,11 @@
       "sample_date": "2026-06-22",
       "sample_value": 117.8,
       "status": "Safe"
+    },
+    {
+      "sample_date": "2026-06-29",
+      "sample_value": null,
+      "status": "NoData"
     }
   ],
   "predicted": [
@@ -452,6 +457,11 @@
     {
       "sample_date": "2026-06-22",
       "pred_ecoli": 850,
+      "status": "Warning"
+    },
+    {
+      "sample_date": "2026-06-29",
+      "pred_ecoli": 959,
       "status": "Warning"
     }
   ],
