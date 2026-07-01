@@ -436,7 +436,7 @@
     },
     {
       "sample_date": "2020-07-01",
-      "pred_ecoli": 291,
+      "pred_ecoli": 288,
       "status": "Advisory"
     },
     {
@@ -506,7 +506,7 @@
     },
     {
       "sample_date": "2020-10-29",
-      "pred_ecoli": 414,
+      "pred_ecoli": 400,
       "status": "Caution"
     },
     {

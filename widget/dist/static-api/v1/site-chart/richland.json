@@ -371,12 +371,12 @@
   "predicted": [
     {
       "sample_date": "2020-09-03",
-      "pred_ecoli": 837,
+      "pred_ecoli": 836,
       "status": "Warning"
     },
     {
       "sample_date": "2020-09-24",
-      "pred_ecoli": 500,
+      "pred_ecoli": 481,
       "status": "Caution"
     },
     {
@@ -386,7 +386,7 @@
     },
     {
       "sample_date": "2020-10-29",
-      "pred_ecoli": 1222,
+      "pred_ecoli": 1220,
       "status": "Warning"
     },
     {
@@ -561,7 +561,7 @@
     },
     {
       "sample_date": "2024-06-17",
-      "pred_ecoli": 478,
+      "pred_ecoli": 479,
       "status": "Caution"
     },
     {
@@ -581,12 +581,12 @@
     },
     {
       "sample_date": "2024-07-15",
-      "pred_ecoli": 207,
+      "pred_ecoli": 206,
       "status": "Safe"
     },
     {
       "sample_date": "2024-07-23",
-      "pred_ecoli": 767,
+      "pred_ecoli": 759,
       "status": "Warning"
     },
     {
@@ -621,7 +621,7 @@
     },
     {
       "sample_date": "2024-09-02",
-      "pred_ecoli": 516,
+      "pred_ecoli": 515,
       "status": "Caution"
     },
     {
@@ -651,32 +651,32 @@
     },
     {
       "sample_date": "2025-06-29",
-      "pred_ecoli": 879,
+      "pred_ecoli": 884,
       "status": "Warning"
     },
     {
       "sample_date": "2025-07-07",
-      "pred_ecoli": 1630,
+      "pred_ecoli": 1631,
       "status": "Warning"
     },
     {
       "sample_date": "2025-07-14",
-      "pred_ecoli": 795,
+      "pred_ecoli": 801,
       "status": "Warning"
     },
     {
       "sample_date": "2025-07-21",
-      "pred_ecoli": 1375,
+      "pred_ecoli": 1376,
       "status": "Warning"
     },
     {
       "sample_date": "2025-07-29",
-      "pred_ecoli": 545,
+      "pred_ecoli": 541,
       "status": "Caution"
     },
     {
       "sample_date": "2025-08-04",
-      "pred_ecoli": 408,
+      "pred_ecoli": 407,
       "status": "Caution"
     },
     {
@@ -706,7 +706,7 @@
     },
     {
       "sample_date": "2025-09-22",
-      "pred_ecoli": 703,
+      "pred_ecoli": 701,
       "status": "Caution"
     },
     {
