@@ -366,7 +366,7 @@
     },
     {
       "sample_date": "2023-05-30",
-      "pred_ecoli": 593,
+      "pred_ecoli": 595,
       "status": "Caution"
     },
     {
@@ -386,7 +386,7 @@
     },
     {
       "sample_date": "2023-06-27",
-      "pred_ecoli": 604,
+      "pred_ecoli": 597,
       "status": "Caution"
     },
     {
@@ -426,38 +426,38 @@
     },
     {
       "sample_date": "2024-06-17",
-      "pred_ecoli": 622,
+      "pred_ecoli": 629,
       "status": "Caution"
     },
     {
       "sample_date": "2024-06-24",
-      "pred_ecoli": 621,
+      "pred_ecoli": 614,
       "status": "Caution"
     },
     {
       "sample_date": "2024-06-26",
-      "pred_ecoli": 481,
-      "status": "Caution"
+      "pred_ecoli": 995,
+      "status": "Warning"
     },
     {
       "sample_date": "2024-07-01",
-      "pred_ecoli": 702,
+      "pred_ecoli": 729,
       "status": "Caution"
     },
     {
       "sample_date": "2024-07-08",
-      "pred_ecoli": 600,
+      "pred_ecoli": 599,
       "status": "Caution"
     },
     {
       "sample_date": "2024-07-16",
-      "pred_ecoli": 602,
+      "pred_ecoli": 608,
       "status": "Caution"
     },
     {
       "sample_date": "2024-07-22",
-      "pred_ecoli": 808,
-      "status": "Warning"
+      "pred_ecoli": 738,
+      "status": "Caution"
     },
     {
       "sample_date": "2024-07-29",
@@ -496,13 +496,13 @@
     },
     {
       "sample_date": "2024-09-17",
-      "pred_ecoli": 600,
+      "pred_ecoli": 598,
       "status": "Caution"
     },
     {
       "sample_date": "2024-09-25",
-      "pred_ecoli": 770,
-      "status": "Warning"
+      "pred_ecoli": 736,
+      "status": "Caution"
     },
     {
       "sample_date": "2024-10-02",
@@ -546,22 +546,22 @@
     },
     {
       "sample_date": "2025-06-30",
-      "pred_ecoli": 739,
+      "pred_ecoli": 721,
       "status": "Caution"
     },
     {
       "sample_date": "2025-07-08",
-      "pred_ecoli": 637,
+      "pred_ecoli": 675,
       "status": "Caution"
     },
     {
       "sample_date": "2025-07-14",
-      "pred_ecoli": 700,
+      "pred_ecoli": 690,
       "status": "Caution"
     },
     {
       "sample_date": "2025-07-21",
-      "pred_ecoli": 164,
+      "pred_ecoli": 142,
       "status": "Safe"
     },
     {
@@ -581,8 +581,8 @@
     },
     {
       "sample_date": "2025-09-22",
-      "pred_ecoli": 678,
-      "status": "Caution"
+      "pred_ecoli": 776,
+      "status": "Warning"
     },
     {
       "sample_date": "2026-06-01",

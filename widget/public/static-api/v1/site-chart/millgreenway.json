@@ -204,13 +204,13 @@
     },
     {
       "sample_date": "2024-07-23",
-      "sample_value": 1732.9,
-      "status": "Warning"
+      "sample_value": 115.3,
+      "status": "Safe"
     },
     {
       "sample_date": "2024-07-23",
-      "sample_value": 115.3,
-      "status": "Safe"
+      "sample_value": 1732.9,
+      "status": "Warning"
     },
     {
       "sample_date": "2024-07-30",
@@ -346,6 +346,11 @@
       "sample_date": "2026-06-24",
       "sample_value": 275.5,
       "status": "Advisory"
+    },
+    {
+      "sample_date": "2026-07-01",
+      "sample_value": null,
+      "status": "NoData"
     }
   ],
   "predicted": [
@@ -546,17 +551,17 @@
     },
     {
       "sample_date": "2024-07-17",
-      "pred_ecoli": 46,
+      "pred_ecoli": 52,
       "status": "Safe"
     },
     {
       "sample_date": "2024-07-23",
-      "pred_ecoli": 370,
+      "pred_ecoli": 372,
       "status": "Caution"
     },
     {
       "sample_date": "2024-07-23",
-      "pred_ecoli": 370,
+      "pred_ecoli": 372,
       "status": "Caution"
     },
     {
@@ -621,12 +626,12 @@
     },
     {
       "sample_date": "2025-07-08",
-      "pred_ecoli": 301,
+      "pred_ecoli": 302,
       "status": "Advisory"
     },
     {
       "sample_date": "2025-07-14",
-      "pred_ecoli": 318,
+      "pred_ecoli": 317,
       "status": "Advisory"
     },
     {
@@ -636,12 +641,12 @@
     },
     {
       "sample_date": "2025-07-28",
-      "pred_ecoli": 219,
+      "pred_ecoli": 218,
       "status": "Safe"
     },
     {
       "sample_date": "2025-08-04",
-      "pred_ecoli": 111,
+      "pred_ecoli": 110,
       "status": "Safe"
     },
     {
@@ -671,7 +676,7 @@
     },
     {
       "sample_date": "2025-09-22",
-      "pred_ecoli": 58,
+      "pred_ecoli": 60,
       "status": "Safe"
     },
     {
@@ -693,6 +698,11 @@
       "sample_date": "2026-06-24",
       "pred_ecoli": 199,
       "status": "Safe"
+    },
+    {
+      "sample_date": "2026-07-01",
+      "pred_ecoli": null,
+      "status": "NoData"
     }
   ],
   "thresholds": {

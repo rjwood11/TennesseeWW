@@ -411,12 +411,17 @@
       "sample_date": "2026-06-24",
       "sample_value": 111.2,
       "status": "Safe"
+    },
+    {
+      "sample_date": "2026-07-01",
+      "sample_value": null,
+      "status": "NoData"
     }
   ],
   "predicted": [
     {
       "sample_date": "2020-08-12",
-      "pred_ecoli": 79,
+      "pred_ecoli": 80,
       "status": "Safe"
     },
     {
@@ -431,7 +436,7 @@
     },
     {
       "sample_date": "2020-09-24",
-      "pred_ecoli": 239,
+      "pred_ecoli": 240,
       "status": "Advisory"
     },
     {
@@ -441,7 +446,7 @@
     },
     {
       "sample_date": "2020-10-29",
-      "pred_ecoli": 1013,
+      "pred_ecoli": 1014,
       "status": "Warning"
     },
     {
@@ -671,7 +676,7 @@
     },
     {
       "sample_date": "2024-07-23",
-      "pred_ecoli": 294,
+      "pred_ecoli": 295,
       "status": "Advisory"
     },
     {
@@ -781,7 +786,7 @@
     },
     {
       "sample_date": "2025-07-28",
-      "pred_ecoli": 213,
+      "pred_ecoli": 212,
       "status": "Safe"
     },
     {
@@ -823,6 +828,11 @@
       "sample_date": "2026-06-24",
       "pred_ecoli": 394,
       "status": "Caution"
+    },
+    {
+      "sample_date": "2026-07-01",
+      "pred_ecoli": null,
+      "status": "NoData"
     }
   ],
   "thresholds": {

@@ -306,32 +306,37 @@
       "sample_date": "2026-06-24",
       "sample_value": 248.9,
       "status": "Advisory"
+    },
+    {
+      "sample_date": "2026-07-01",
+      "sample_value": null,
+      "status": "NoData"
     }
   ],
   "predicted": [
     {
       "sample_date": "2020-06-25",
-      "pred_ecoli": 185,
+      "pred_ecoli": 186,
       "status": "Safe"
     },
     {
       "sample_date": "2020-07-01",
-      "pred_ecoli": 197,
-      "status": "Safe"
+      "pred_ecoli": 268,
+      "status": "Advisory"
     },
     {
       "sample_date": "2020-07-02",
-      "pred_ecoli": 200,
-      "status": "Safe"
+      "pred_ecoli": 237,
+      "status": "Advisory"
     },
     {
       "sample_date": "2020-07-08",
-      "pred_ecoli": 214,
+      "pred_ecoli": 215,
       "status": "Safe"
     },
     {
       "sample_date": "2020-07-10",
-      "pred_ecoli": 217,
+      "pred_ecoli": 219,
       "status": "Safe"
     },
     {
@@ -346,22 +351,22 @@
     },
     {
       "sample_date": "2020-07-23",
-      "pred_ecoli": 239,
-      "status": "Advisory"
-    },
-    {
-      "sample_date": "2020-07-29",
       "pred_ecoli": 246,
       "status": "Advisory"
     },
     {
+      "sample_date": "2020-07-29",
+      "pred_ecoli": 250,
+      "status": "Advisory"
+    },
+    {
       "sample_date": "2020-08-05",
-      "pred_ecoli": 265,
+      "pred_ecoli": 267,
       "status": "Advisory"
     },
     {
       "sample_date": "2020-08-12",
-      "pred_ecoli": 261,
+      "pred_ecoli": 270,
       "status": "Advisory"
     },
     {
@@ -371,12 +376,12 @@
     },
     {
       "sample_date": "2020-09-03",
-      "pred_ecoli": 372,
+      "pred_ecoli": 395,
       "status": "Caution"
     },
     {
       "sample_date": "2020-09-24",
-      "pred_ecoli": 320,
+      "pred_ecoli": 326,
       "status": "Advisory"
     },
     {
@@ -386,7 +391,7 @@
     },
     {
       "sample_date": "2020-10-29",
-      "pred_ecoli": 378,
+      "pred_ecoli": 478,
       "status": "Caution"
     },
     {
@@ -613,6 +618,11 @@
       "sample_date": "2026-06-24",
       "pred_ecoli": 185,
       "status": "Safe"
+    },
+    {
+      "sample_date": "2026-07-01",
+      "pred_ecoli": null,
+      "status": "NoData"
     }
   ],
   "thresholds": {
