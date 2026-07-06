@@ -204,13 +204,13 @@
     },
     {
       "sample_date": "2024-07-23",
-      "sample_value": 115.3,
-      "status": "Safe"
+      "sample_value": 1732.9,
+      "status": "Warning"
     },
     {
       "sample_date": "2024-07-23",
-      "sample_value": 1732.9,
-      "status": "Warning"
+      "sample_value": 115.3,
+      "status": "Safe"
     },
     {
       "sample_date": "2024-07-30",
