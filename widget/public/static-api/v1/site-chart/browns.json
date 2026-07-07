@@ -304,6 +304,11 @@
     },
     {
       "sample_date": "2026-07-01",
+      "sample_value": 53.8,
+      "status": "Safe"
+    },
+    {
+      "sample_date": "2026-07-07",
       "sample_value": 0.0,
       "status": "Safe"
     }
@@ -613,6 +618,11 @@
       "sample_date": "2026-07-01",
       "pred_ecoli": 625,
       "status": "Caution"
+    },
+    {
+      "sample_date": "2026-07-07",
+      "pred_ecoli": null,
+      "status": "NoData"
     }
   ],
   "thresholds": {
