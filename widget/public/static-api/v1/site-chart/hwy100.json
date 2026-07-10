@@ -631,7 +631,7 @@
     },
     {
       "sample_date": "2026-07-07",
-      "pred_ecoli": 249,
+      "pred_ecoli": 250,
       "status": "Advisory"
     }
   ],

@@ -196,32 +196,32 @@
     },
     {
       "sample_date": "2026-06-03",
-      "pred_ecoli": 719,
+      "pred_ecoli": 737,
       "status": "Caution"
     },
     {
       "sample_date": "2026-06-10",
-      "pred_ecoli": 428,
+      "pred_ecoli": 443,
       "status": "Caution"
     },
     {
       "sample_date": "2026-06-17",
-      "pred_ecoli": 306,
+      "pred_ecoli": 319,
       "status": "Advisory"
     },
     {
       "sample_date": "2026-06-24",
-      "pred_ecoli": 448,
+      "pred_ecoli": 463,
       "status": "Caution"
     },
     {
       "sample_date": "2026-06-30",
-      "pred_ecoli": 127,
+      "pred_ecoli": 136,
       "status": "Safe"
     },
     {
       "sample_date": "2026-07-08",
-      "pred_ecoli": 1974,
+      "pred_ecoli": 1992,
       "status": "Warning"
     }
   ],
