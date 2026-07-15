@@ -319,8 +319,8 @@
     },
     {
       "sample_date": "2026-07-14",
-      "sample_value": 0.0,
-      "status": "Safe"
+      "sample_value": 517.2,
+      "status": "Caution"
     }
   ],
   "predicted": [
