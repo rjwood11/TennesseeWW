@@ -20,6 +20,23 @@ DROPBOX_HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; TNWW static exporter)",
 }
 
+SAMPLE_LOCATION_ALIASES_BY_SITE_ID: dict[str, tuple[str, ...]] = {
+    "hwy100": ("Highway 100 Boat Launch",),
+    "hwy70": ("Hwy 70 Boat Launch",),
+    "jackson": ("Jackson Blvd",),
+    "lewisburg": ("Lewisburg Pike",),
+    "millgreenway": ("Mill Creek Greenway",),
+    "moran": ("Moran Road Bridge",),
+    "richland": ("Richland Creek Greenway",),
+    "whitsett": ("Whitsett Park",),
+    "browns": ("Browns Creek - Battlemont Park",),
+    "whites": ("Whites Creek at Hartman Park",),
+    "cumberland": ("Cumberland River - Downtown Access",),
+    "walterhill": ("Walter Hill Dam Recreational Area",),
+    "centerville": ("Centerville River Park",),
+    "cottonwood": ("Cottonwood - Del Rio Bridge",),
+}
+
 
 def _normalize_name(name: object) -> str:
     if name is None:
@@ -29,7 +46,38 @@ def _normalize_name(name: object) -> str:
             return ""
     except (TypeError, ValueError):
         pass
-    return re.sub(r"[^a-z0-9]+", "", str(name).lower())
+    text = str(name).lower().replace("highway", "hwy")
+    return re.sub(r"[^a-z0-9]+", "", text)
+
+
+def _site_name_targets(site: Site) -> list[str]:
+    candidates = [site.name, *SAMPLE_LOCATION_ALIASES_BY_SITE_ID.get(site.id, ())]
+    for candidate in tuple(candidates):
+        if " - " not in candidate:
+            continue
+        parts = [part.strip() for part in candidate.split(" - ") if part.strip()]
+        for index in range(1, len(parts)):
+            candidates.append(" - ".join(parts[index:]))
+
+    targets: list[str] = []
+    seen: set[str] = set()
+    for candidate in candidates:
+        target = _normalize_name(candidate)
+        if target and target not in seen:
+            targets.append(target)
+            seen.add(target)
+    return targets
+
+
+def _matching_sampling_rows(df: pd.DataFrame, site: Site) -> pd.DataFrame:
+    targets = _site_name_targets(site)
+    if not targets:
+        return df.iloc[0:0]
+    return df[
+        df["loc_norm"].map(
+            lambda value: isinstance(value, str) and any(value == target or target in value for target in targets)
+        )
+    ]
 
 
 def _parse_sample_value(raw: object) -> float | None:
@@ -67,10 +115,7 @@ async def fetch_sampling_latest(dropbox_url: str, sites: list[Site], client: htt
 
     by_site: dict[str, dict] = {}
     for site in sites:
-        target = _normalize_name(site.name)
-        matches = df[(df["loc_norm"] == target) | (df["loc_norm"].str.contains(target, na=False))]
-        if matches.empty:
-            matches = df[df["loc_norm"].map(lambda x: target in x if isinstance(x, str) else False)]
+        matches = _matching_sampling_rows(df, site)
         if matches.empty:
             continue
         sample = _latest_reported_sample(matches)
@@ -135,10 +180,7 @@ async def fetch_sampling_history_for_site(
     if df is None:
         return []
 
-    target = _normalize_name(site.name)
-    matches = df[(df["loc_norm"] == target) | (df["loc_norm"].str.contains(target, na=False))]
-    if matches.empty:
-        matches = df[df["loc_norm"].map(lambda x: target in x if isinstance(x, str) else False)]
+    matches = _matching_sampling_rows(df, site)
     if matches.empty:
         return []
 

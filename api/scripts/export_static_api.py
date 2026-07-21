@@ -15,7 +15,7 @@ from app.core.cache import SqliteCache
 from app.core.config import get_settings, load_gauges, load_models, load_sites
 from app.domain.advisory import compute_status
 from app.domain.model_eval import ModelExpressionError, evaluate_expression
-from app.providers.dropbox_sampling import _load_sampling_df, _read_sampling_content
+from app.providers.dropbox_sampling import _load_sampling_df, _matching_sampling_rows, _read_sampling_content
 from app.providers.openmeteo_history import compute_sindoy_for_date, fetch_weather_daily_features
 from app.providers.usgs_nwis_dv import fetch_usgs_daily_values
 from app.services.forecast_service import ForecastService
@@ -51,6 +51,11 @@ async def main() -> None:
         action="store_true",
         help="Skip model-predicted chart points in static site-chart files.",
     )
+    parser.add_argument(
+        "--allow-empty-predictions",
+        action="store_true",
+        help="Allow export to continue when no current E. coli predictions can be calculated.",
+    )
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parents[2]
@@ -64,6 +69,7 @@ async def main() -> None:
     await ingest.ingest()
 
     latest = service.get_latest().model_dump(mode="json")
+    _validate_latest_predictions(latest, allow_empty_predictions=args.allow_empty_predictions)
     _write_json(output_dir / "v1" / "forecast.json", latest)
 
     measured_by_site = await _load_measured_by_site(args.days)
@@ -92,6 +98,28 @@ async def main() -> None:
     print(f"Wrote static API payloads to {output_dir}")
 
 
+def _validate_latest_predictions(latest: dict, *, allow_empty_predictions: bool = False) -> None:
+    if allow_empty_predictions:
+        return
+
+    items = latest.get("items", [])
+    if not items:
+        raise RuntimeError("Static export produced no forecast rows; refusing to deploy an empty map.")
+
+    prediction_count = sum(1 for item in items if item.get("pred_ecoli") is not None)
+    if prediction_count > 0:
+        return
+
+    flow_count = sum(1 for item in items if item.get("drivers", {}).get("flow") is not None)
+    gage_count = sum(1 for item in items if item.get("drivers", {}).get("gage") is not None)
+    raise RuntimeError(
+        "Static export produced zero current E. coli predictions "
+        f"for {len(items)} sites (flow values: {flow_count}, gage values: {gage_count}); "
+        "refusing to deploy all-NoData forecast payload. "
+        "Rerun after provider recovery, or pass --allow-empty-predictions intentionally."
+    )
+
+
 async def _load_measured_by_site(days: int) -> dict[str, list[dict]]:
     settings = get_settings()
     sites = load_sites()
@@ -115,10 +143,7 @@ async def _load_measured_by_site(days: int) -> dict[str, list[dict]]:
         return by_site
 
     for site in sites:
-        target = "".join(ch.lower() for ch in site.name if ch.isalnum())
-        matches = filtered[(filtered["loc_norm"] == target) | (filtered["loc_norm"].str.contains(target, na=False))]
-        if matches.empty:
-            matches = filtered[filtered["loc_norm"].map(lambda x: target in x if isinstance(x, str) else False)]
+        matches = _matching_sampling_rows(filtered, site)
         if matches.empty:
             continue
         matches = matches.sort_values("sample_date", ascending=True)

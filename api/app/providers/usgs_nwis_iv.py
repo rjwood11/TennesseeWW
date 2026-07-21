@@ -6,6 +6,8 @@ from typing import Any
 
 import httpx
 
+from app.providers.http_retry import get_with_retries
+
 
 USGS_IV_URL = "https://waterservices.usgs.gov/nwis/iv/"
 
@@ -34,8 +36,13 @@ def _parse_param_average(values: list[dict[str, Any]]) -> tuple[float | None, da
 
 async def fetch_usgs_latest(site_no: str, client: httpx.AsyncClient) -> dict[str, Any]:
     params = {"format": "json", "sites": site_no, "parameterCd": "00060,00065", "period": "P1D"}
-    response = await client.get(USGS_IV_URL, params=params, timeout=30)
-    response.raise_for_status()
+    response = await get_with_retries(
+        client,
+        USGS_IV_URL,
+        params=params,
+        timeout=30,
+        label=f"USGS instant values fetch for {site_no}",
+    )
     payload = response.json()
     series = payload.get("value", {}).get("timeSeries", [])
 

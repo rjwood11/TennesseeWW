@@ -95,7 +95,7 @@ models:
     enabled: true
     model_type: formula
     required: [flow, rain_2d]
-    expression: "-335.7 + 26.93 + 587.4*(SQUARE(rain_2d))"
+    expression: "-335.7 + 26.93 + 587.4*(rain_2d^2)"
 
   cumberland:
     enabled: true
