@@ -386,6 +386,11 @@
       "sample_date": "2026-07-27",
       "sample_value": 770.1,
       "status": "Warning"
+    },
+    {
+      "sample_date": "2026-08-03",
+      "sample_value": null,
+      "status": "NoData"
     }
   ],
   "predicted": [
@@ -773,6 +778,11 @@
       "sample_date": "2026-07-27",
       "pred_ecoli": 676,
       "status": "Caution"
+    },
+    {
+      "sample_date": "2026-08-03",
+      "pred_ecoli": null,
+      "status": "NoData"
     }
   ],
   "thresholds": {
