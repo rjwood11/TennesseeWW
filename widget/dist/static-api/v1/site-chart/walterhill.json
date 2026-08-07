@@ -196,193 +196,193 @@
   "predicted": [
     {
       "sample_date": "2024-06-11",
-      "pred_ecoli": -844,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-06-18",
-      "pred_ecoli": -847,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-06-25",
-      "pred_ecoli": -847,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-07-09",
-      "pred_ecoli": -848,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-07-17",
-      "pred_ecoli": -849,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-07-23",
-      "pred_ecoli": -847,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-07-30",
-      "pred_ecoli": -848,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-08-06",
-      "pred_ecoli": -825,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-08-13",
-      "pred_ecoli": -848,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-08-20",
-      "pred_ecoli": -848,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-08-27",
-      "pred_ecoli": -849,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-09-03",
-      "pred_ecoli": -849,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-09-24",
-      "pred_ecoli": -849,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-10-01",
-      "pred_ecoli": 1011,
-      "status": "Warning"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-10-08",
-      "pred_ecoli": -847,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-10-15",
-      "pred_ecoli": -847,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2024-10-22",
-      "pred_ecoli": -847,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2025-06-03",
-      "pred_ecoli": -793,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2025-06-09",
-      "pred_ecoli": -754,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2025-06-16",
-      "pred_ecoli": -791,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2025-06-23",
-      "pred_ecoli": -791,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2025-06-30",
-      "pred_ecoli": -786,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2025-07-07",
-      "pred_ecoli": -829,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2025-07-14",
-      "pred_ecoli": -847,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2025-07-21",
-      "pred_ecoli": -254,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2025-08-04",
-      "pred_ecoli": -848,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2025-08-18",
-      "pred_ecoli": -849,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2025-08-25",
-      "pred_ecoli": -849,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2025-09-29",
-      "pred_ecoli": -695,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2026-06-02",
-      "pred_ecoli": -849,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2026-06-16",
-      "pred_ecoli": -849,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2026-06-23",
-      "pred_ecoli": -849,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2026-06-30",
-      "pred_ecoli": -849,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2026-07-07",
-      "pred_ecoli": -849,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2026-07-14",
-      "pred_ecoli": -843,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2026-07-21",
-      "pred_ecoli": -663,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2026-07-28",
-      "pred_ecoli": -827,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     },
     {
       "sample_date": "2026-08-04",
-      "pred_ecoli": -849,
-      "status": "Safe"
+      "pred_ecoli": null,
+      "status": "NoData"
     }
   ],
   "thresholds": {

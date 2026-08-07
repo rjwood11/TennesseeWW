@@ -284,8 +284,8 @@
     },
     {
       "sample_date": "2026-08-05",
-      "sample_value": null,
-      "status": "NoData"
+      "sample_value": 22.3,
+      "status": "Safe"
     }
   ],
   "predicted": [
