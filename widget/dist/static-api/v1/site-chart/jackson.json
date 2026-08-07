@@ -736,52 +736,52 @@
     },
     {
       "sample_date": "2026-06-01",
-      "pred_ecoli": 667,
+      "pred_ecoli": 666,
       "status": "Caution"
     },
     {
       "sample_date": "2026-06-08",
-      "pred_ecoli": 569,
+      "pred_ecoli": 567,
       "status": "Caution"
     },
     {
       "sample_date": "2026-06-15",
-      "pred_ecoli": 631,
+      "pred_ecoli": 629,
       "status": "Caution"
     },
     {
       "sample_date": "2026-06-22",
-      "pred_ecoli": 570,
+      "pred_ecoli": 567,
       "status": "Caution"
     },
     {
       "sample_date": "2026-06-29",
-      "pred_ecoli": 340,
+      "pred_ecoli": 334,
       "status": "Advisory"
     },
     {
       "sample_date": "2026-07-06",
-      "pred_ecoli": 712,
+      "pred_ecoli": 710,
       "status": "Caution"
     },
     {
       "sample_date": "2026-07-13",
-      "pred_ecoli": 733,
+      "pred_ecoli": 731,
       "status": "Caution"
     },
     {
       "sample_date": "2026-07-20",
-      "pred_ecoli": 520,
+      "pred_ecoli": 515,
       "status": "Caution"
     },
     {
       "sample_date": "2026-07-27",
-      "pred_ecoli": 676,
+      "pred_ecoli": 672,
       "status": "Caution"
     },
     {
       "sample_date": "2026-08-03",
-      "pred_ecoli": 587,
+      "pred_ecoli": 583,
       "status": "Caution"
     }
   ],

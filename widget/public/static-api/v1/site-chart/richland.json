@@ -394,8 +394,8 @@
     },
     {
       "sample_date": "2026-08-04",
-      "sample_value": null,
-      "status": "NoData"
+      "sample_value": 360.9,
+      "status": "Caution"
     }
   ],
   "predicted": [
@@ -746,52 +746,52 @@
     },
     {
       "sample_date": "2026-06-02",
-      "pred_ecoli": 1129,
+      "pred_ecoli": 1126,
       "status": "Warning"
     },
     {
       "sample_date": "2026-06-09",
-      "pred_ecoli": 1317,
+      "pred_ecoli": 1315,
       "status": "Warning"
     },
     {
       "sample_date": "2026-06-16",
-      "pred_ecoli": 968,
+      "pred_ecoli": 961,
       "status": "Warning"
     },
     {
       "sample_date": "2026-06-23",
-      "pred_ecoli": 879,
+      "pred_ecoli": 873,
       "status": "Warning"
     },
     {
       "sample_date": "2026-06-30",
-      "pred_ecoli": 510,
+      "pred_ecoli": 496,
       "status": "Caution"
     },
     {
       "sample_date": "2026-07-07",
-      "pred_ecoli": 1405,
+      "pred_ecoli": 1401,
       "status": "Warning"
     },
     {
       "sample_date": "2026-07-14",
-      "pred_ecoli": 1412,
+      "pred_ecoli": 1407,
       "status": "Warning"
     },
     {
       "sample_date": "2026-07-21",
-      "pred_ecoli": 1829,
+      "pred_ecoli": 1848,
       "status": "Warning"
     },
     {
       "sample_date": "2026-07-30",
-      "pred_ecoli": 901,
+      "pred_ecoli": 887,
       "status": "Warning"
     },
     {
       "sample_date": "2026-08-04",
-      "pred_ecoli": 982,
+      "pred_ecoli": 968,
       "status": "Warning"
     }
   ],
