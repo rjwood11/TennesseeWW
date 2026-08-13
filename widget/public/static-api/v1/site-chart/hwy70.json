@@ -439,8 +439,8 @@
     },
     {
       "sample_date": "2026-08-07",
-      "sample_value": null,
-      "status": "NoData"
+      "sample_value": 3.1,
+      "status": "Safe"
     },
     {
       "sample_date": "2026-08-12",
