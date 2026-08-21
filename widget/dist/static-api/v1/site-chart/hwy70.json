@@ -234,12 +234,12 @@
     },
     {
       "sample_date": "2024-06-25",
-      "sample_value": 56.0,
+      "sample_value": 42.8,
       "status": "Safe"
     },
     {
       "sample_date": "2024-06-25",
-      "sample_value": 42.8,
+      "sample_value": 56.0,
       "status": "Safe"
     },
     {
@@ -446,6 +446,11 @@
       "sample_date": "2026-08-12",
       "sample_value": 155.3,
       "status": "Safe"
+    },
+    {
+      "sample_date": "2026-08-20",
+      "sample_value": null,
+      "status": "NoData"
     }
   ],
   "predicted": [
@@ -893,6 +898,11 @@
       "sample_date": "2026-08-12",
       "pred_ecoli": 505,
       "status": "Caution"
+    },
+    {
+      "sample_date": "2026-08-20",
+      "pred_ecoli": 75,
+      "status": "Safe"
     }
   ],
   "thresholds": {
