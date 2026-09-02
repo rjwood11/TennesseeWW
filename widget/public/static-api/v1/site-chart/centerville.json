@@ -271,7 +271,7 @@
     },
     {
       "sample_date": "2026-08-01",
-      "pred_ecoli": 446,
+      "pred_ecoli": 432,
       "status": "Caution"
     }
   ],
