@@ -921,8 +921,8 @@
     },
     {
       "sample_date": "2026-09-02",
-      "pred_ecoli": null,
-      "status": "NoData"
+      "pred_ecoli": -43,
+      "status": "Safe"
     }
   ],
   "thresholds": {
