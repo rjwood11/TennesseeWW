@@ -204,13 +204,13 @@
     },
     {
       "sample_date": "2024-07-23",
-      "sample_value": 1732.9,
-      "status": "Warning"
+      "sample_value": 115.3,
+      "status": "Safe"
     },
     {
       "sample_date": "2024-07-23",
-      "sample_value": 115.3,
-      "status": "Safe"
+      "sample_value": 1732.9,
+      "status": "Warning"
     },
     {
       "sample_date": "2024-07-30",
@@ -399,8 +399,8 @@
     },
     {
       "sample_date": "2026-09-09",
-      "sample_value": null,
-      "status": "NoData"
+      "sample_value": 49.5,
+      "status": "Safe"
     }
   ],
   "predicted": [
