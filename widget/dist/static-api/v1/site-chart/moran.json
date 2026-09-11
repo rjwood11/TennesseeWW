@@ -911,7 +911,7 @@
     },
     {
       "sample_date": "2026-07-14",
-      "pred_ecoli": 792,
+      "pred_ecoli": 794,
       "status": "Warning"
     },
     {
@@ -931,27 +931,27 @@
     },
     {
       "sample_date": "2026-08-10",
-      "pred_ecoli": 1980,
+      "pred_ecoli": 2036,
       "status": "Warning"
     },
     {
       "sample_date": "2026-08-19",
-      "pred_ecoli": 360,
+      "pred_ecoli": 376,
       "status": "Caution"
     },
     {
       "sample_date": "2026-08-24",
-      "pred_ecoli": 349,
-      "status": "Advisory"
+      "pred_ecoli": 364,
+      "status": "Caution"
     },
     {
       "sample_date": "2026-08-31",
-      "pred_ecoli": 298,
+      "pred_ecoli": 308,
       "status": "Advisory"
     },
     {
       "sample_date": "2026-09-09",
-      "pred_ecoli": 284,
+      "pred_ecoli": 291,
       "status": "Advisory"
     }
   ],

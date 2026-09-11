@@ -701,12 +701,12 @@
     },
     {
       "sample_date": "2026-08-12",
-      "pred_ecoli": 316,
+      "pred_ecoli": 318,
       "status": "Advisory"
     },
     {
       "sample_date": "2026-08-18",
-      "pred_ecoli": 280,
+      "pred_ecoli": 281,
       "status": "Advisory"
     },
     {
