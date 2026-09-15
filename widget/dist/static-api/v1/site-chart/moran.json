@@ -961,8 +961,8 @@
     },
     {
       "sample_date": "2026-09-14",
-      "pred_ecoli": null,
-      "status": "NoData"
+      "pred_ecoli": 286,
+      "status": "Advisory"
     }
   ],
   "thresholds": {
