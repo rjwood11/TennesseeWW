@@ -361,6 +361,11 @@
       "sample_date": "2026-09-09",
       "sample_value": 206.4,
       "status": "Safe"
+    },
+    {
+      "sample_date": "2026-09-22",
+      "sample_value": null,
+      "status": "NoData"
     }
   ],
   "predicted": [
@@ -723,6 +728,11 @@
       "sample_date": "2026-09-09",
       "pred_ecoli": 273,
       "status": "Advisory"
+    },
+    {
+      "sample_date": "2026-09-22",
+      "pred_ecoli": null,
+      "status": "NoData"
     }
   ],
   "thresholds": {
