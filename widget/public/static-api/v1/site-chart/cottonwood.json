@@ -164,8 +164,8 @@
     },
     {
       "sample_date": "2026-09-21",
-      "sample_value": null,
-      "status": "NoData"
+      "sample_value": 290.9,
+      "status": "Advisory"
     }
   ],
   "predicted": [
