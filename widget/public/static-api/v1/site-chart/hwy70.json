@@ -234,12 +234,12 @@
     },
     {
       "sample_date": "2024-06-25",
-      "sample_value": 56.0,
+      "sample_value": 42.8,
       "status": "Safe"
     },
     {
       "sample_date": "2024-06-25",
-      "sample_value": 42.8,
+      "sample_value": 56.0,
       "status": "Safe"
     },
     {
