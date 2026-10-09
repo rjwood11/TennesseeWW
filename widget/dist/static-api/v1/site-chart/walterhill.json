@@ -396,12 +396,12 @@
     },
     {
       "sample_date": "2026-08-12",
-      "pred_ecoli": 508,
+      "pred_ecoli": 713,
       "status": "Caution"
     },
     {
       "sample_date": "2026-08-18",
-      "pred_ecoli": -849,
+      "pred_ecoli": -847,
       "status": "Safe"
     }
   ],
