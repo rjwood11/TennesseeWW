@@ -5,12 +5,12 @@
     {
       "id": 12,
       "site_id": "walterhill",
-      "computed_at": "2026-11-01T13:36:56.365279+00:00",
+      "computed_at": "2026-11-01T22:05:39.221240+00:00",
       "pred_ecoli": -849,
       "status": "Safe",
       "drivers": {
-        "flow": 39.62,
-        "gage": 2.512,
+        "flow": 48.16,
+        "gage": 2.298,
         "sindoy": -0.8918611458820969,
         "flow_rating": "Extremely lower than average",
         "flow_stats": {

@@ -5,12 +5,12 @@
     {
       "id": 13,
       "site_id": "centerville",
-      "computed_at": "2026-11-01T13:36:56.365279+00:00",
-      "pred_ecoli": 268,
+      "computed_at": "2026-11-01T22:05:39.221240+00:00",
+      "pred_ecoli": 276,
       "status": "Advisory",
       "drivers": {
-        "flow": 386.2,
-        "gage": 2.928,
+        "flow": 417.4,
+        "gage": 3.006,
         "sindoy": -0.8918611458820969,
         "flow_rating": "Lower than average",
         "flow_stats": {
