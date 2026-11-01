@@ -426,7 +426,7 @@
     },
     {
       "sample_date": "2020-08-12",
-      "pred_ecoli": 270,
+      "pred_ecoli": 269,
       "status": "Advisory"
     },
     {
@@ -451,7 +451,7 @@
     },
     {
       "sample_date": "2020-10-29",
-      "pred_ecoli": 478,
+      "pred_ecoli": 477,
       "status": "Caution"
     },
     {
@@ -511,7 +511,7 @@
     },
     {
       "sample_date": "2021-10-05",
-      "pred_ecoli": 334,
+      "pred_ecoli": 335,
       "status": "Advisory"
     },
     {
@@ -611,7 +611,7 @@
     },
     {
       "sample_date": "2023-06-20",
-      "pred_ecoli": 204,
+      "pred_ecoli": 198,
       "status": "Safe"
     },
     {
@@ -666,7 +666,7 @@
     },
     {
       "sample_date": "2026-06-10",
-      "pred_ecoli": 163,
+      "pred_ecoli": 162,
       "status": "Safe"
     },
     {
@@ -686,7 +686,7 @@
     },
     {
       "sample_date": "2026-07-07",
-      "pred_ecoli": 250,
+      "pred_ecoli": 251,
       "status": "Advisory"
     },
     {
@@ -696,7 +696,7 @@
     },
     {
       "sample_date": "2026-07-21",
-      "pred_ecoli": 283,
+      "pred_ecoli": 295,
       "status": "Advisory"
     },
     {

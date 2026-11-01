@@ -331,7 +331,7 @@
     },
     {
       "sample_date": "2022-06-14",
-      "pred_ecoli": -302,
+      "pred_ecoli": -304,
       "status": "Safe"
     },
     {
@@ -356,7 +356,7 @@
     },
     {
       "sample_date": "2023-07-10",
-      "pred_ecoli": -253,
+      "pred_ecoli": -258,
       "status": "Safe"
     },
     {
@@ -441,7 +441,7 @@
     },
     {
       "sample_date": "2024-09-02",
-      "pred_ecoli": -227,
+      "pred_ecoli": -228,
       "status": "Safe"
     },
     {
@@ -571,7 +571,7 @@
     },
     {
       "sample_date": "2026-06-08",
-      "pred_ecoli": 100,
+      "pred_ecoli": 173,
       "status": "Safe"
     },
     {
@@ -581,12 +581,12 @@
     },
     {
       "sample_date": "2026-06-22",
-      "pred_ecoli": 108,
+      "pred_ecoli": 112,
       "status": "Safe"
     },
     {
       "sample_date": "2026-06-29",
-      "pred_ecoli": -297,
+      "pred_ecoli": -299,
       "status": "Safe"
     },
     {
@@ -596,7 +596,7 @@
     },
     {
       "sample_date": "2026-07-21",
-      "pred_ecoli": -52,
+      "pred_ecoli": 169,
       "status": "Safe"
     },
     {
@@ -641,7 +641,7 @@
     },
     {
       "sample_date": "2026-09-22",
-      "pred_ecoli": -307,
+      "pred_ecoli": -308,
       "status": "Safe"
     }
   ],
