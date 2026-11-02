@@ -5,21 +5,21 @@
     {
       "id": 14,
       "site_id": "cottonwood",
-      "computed_at": "2026-11-01T22:05:39.221240+00:00",
-      "pred_ecoli": 61,
+      "computed_at": "2026-11-02T06:14:42.503365+00:00",
+      "pred_ecoli": 84,
       "status": "Safe",
       "drivers": {
-        "flow": 36.44,
-        "gage": 1.132,
-        "sindoy": -0.8918611458820969,
+        "flow": 49.24,
+        "gage": 1.198,
+        "sindoy": -0.8839432460781448,
         "flow_rating": "Average",
         "flow_stats": {
-          "low": 5.3,
-          "p25": 23.0,
-          "median": 58.0,
-          "mean": 226.0,
-          "p75": 204.0,
-          "high": 3860.0
+          "low": 4.7,
+          "p25": 24.0,
+          "median": 66.0,
+          "mean": 259.0,
+          "p75": 244.0,
+          "high": 6750.0
         }
       }
     }
