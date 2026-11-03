@@ -5,12 +5,12 @@
     {
       "id": 3,
       "site_id": "jackson",
-      "computed_at": "2026-11-03T14:22:52.496617+00:00",
-      "pred_ecoli": 451,
+      "computed_at": "2026-11-03T23:27:08.415995+00:00",
+      "pred_ecoli": 436,
       "status": "Caution",
       "drivers": {
-        "flow": 14.059999999999999,
-        "gage": 0.828,
+        "flow": 12.780000000000001,
+        "gage": 0.808,
         "sindoy": -0.8757634148133603,
         "flow_rating": "Average",
         "flow_stats": {

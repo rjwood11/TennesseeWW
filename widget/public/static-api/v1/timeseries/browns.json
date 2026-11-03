@@ -5,12 +5,12 @@
     {
       "id": 9,
       "site_id": "browns",
-      "computed_at": "2026-11-03T14:22:52.496617+00:00",
+      "computed_at": "2026-11-03T23:27:08.415995+00:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 7.23,
-        "gage": 1.81,
+        "flow": 6.828,
+        "gage": 1.796,
         "sindoy": -0.8757634148133603,
         "flow_rating": "Average",
         "flow_stats": {
