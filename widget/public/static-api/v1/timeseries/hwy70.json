@@ -5,21 +5,21 @@
     {
       "id": 2,
       "site_id": "hwy70",
-      "computed_at": "2026-11-03T01:01:31.378201+00:00",
+      "computed_at": "2026-11-03T14:22:52.496617+00:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 214.8,
-        "gage": 0.976,
-        "sindoy": -0.8839432460781448,
-        "flow_rating": "Average",
+        "flow": 422.6,
+        "gage": 1.602,
+        "sindoy": -0.8757634148133603,
+        "flow_rating": "Higher than average",
         "flow_stats": {
-          "low": 46.0,
-          "p25": 85.0,
-          "median": 147.0,
-          "mean": 440.0,
-          "p75": 393.0,
-          "high": 9470.0
+          "low": 43.0,
+          "p25": 89.0,
+          "median": 151.0,
+          "mean": 432.0,
+          "p75": 371.0,
+          "high": 4910.0
         }
       }
     }

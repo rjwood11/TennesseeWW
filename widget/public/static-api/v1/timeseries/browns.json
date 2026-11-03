@@ -5,21 +5,21 @@
     {
       "id": 9,
       "site_id": "browns",
-      "computed_at": "2026-11-03T01:01:31.378201+00:00",
+      "computed_at": "2026-11-03T14:22:52.496617+00:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 8.86,
-        "gage": 1.86,
-        "sindoy": -0.8839432460781448,
-        "flow_rating": "Higher than average",
+        "flow": 7.23,
+        "gage": 1.81,
+        "sindoy": -0.8757634148133603,
+        "flow_rating": "Average",
         "flow_stats": {
           "low": 0.6,
-          "p25": 2.7,
-          "median": 5.1,
-          "mean": 9.0,
-          "p75": 8.2,
-          "high": 52.5
+          "p25": 2.6,
+          "median": 4.7,
+          "mean": 6.7,
+          "p75": 8.8,
+          "high": 36.0
         }
       }
     }
