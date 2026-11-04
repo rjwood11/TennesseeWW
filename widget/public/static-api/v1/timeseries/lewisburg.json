@@ -5,14 +5,14 @@
     {
       "id": 4,
       "site_id": "lewisburg",
-      "computed_at": "2026-11-04T06:31:48.687511+00:00",
+      "computed_at": "2026-11-04T19:49:22.523961+00:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 2.75,
-        "gage": 3.92,
+        "flow": 466.0,
+        "gage": 5.89,
         "sindoy": -0.8673240759482688,
-        "flow_rating": "Lower than average",
+        "flow_rating": "Higher than average",
         "flow_stats": {
           "low": 0.54,
           "p25": 10.0,

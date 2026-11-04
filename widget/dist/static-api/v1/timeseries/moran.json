@@ -5,14 +5,14 @@
     {
       "id": 6,
       "site_id": "moran",
-      "computed_at": "2026-11-04T06:31:48.687511+00:00",
-      "pred_ecoli": 423,
-      "status": "Caution",
+      "computed_at": "2026-11-04T19:49:22.523961+00:00",
+      "pred_ecoli": 2667,
+      "status": "Warning",
       "drivers": {
-        "flow": 175.0,
-        "gage": 1.64,
+        "flow": 1214.6,
+        "gage": 3.406,
         "sindoy": -0.8673240759482688,
-        "flow_rating": "Average",
+        "flow_rating": "Higher than average",
         "flow_stats": {
           "low": 4.2,
           "p25": 25.0,
