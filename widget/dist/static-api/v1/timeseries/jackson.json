@@ -5,21 +5,21 @@
     {
       "id": 3,
       "site_id": "jackson",
-      "computed_at": "2026-11-03T23:27:08.415995+00:00",
-      "pred_ecoli": 436,
+      "computed_at": "2026-11-04T06:31:48.687511+00:00",
+      "pred_ecoli": 450,
       "status": "Caution",
       "drivers": {
-        "flow": 12.780000000000001,
-        "gage": 0.808,
-        "sindoy": -0.8757634148133603,
+        "flow": 13.94,
+        "gage": 0.826,
+        "sindoy": -0.8673240759482688,
         "flow_rating": "Average",
         "flow_stats": {
-          "low": 0.3,
-          "p25": 4.0,
+          "low": 0.4,
+          "p25": 4.2,
           "median": 7.1,
-          "mean": 13.0,
-          "p75": 16.0,
-          "high": 78.0
+          "mean": 11.0,
+          "p75": 15.0,
+          "high": 52.0
         }
       }
     }

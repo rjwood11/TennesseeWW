@@ -5,21 +5,21 @@
     {
       "id": 12,
       "site_id": "walterhill",
-      "computed_at": "2026-11-03T23:27:08.415995+00:00",
-      "pred_ecoli": -849,
+      "computed_at": "2026-11-04T06:31:48.687511+00:00",
+      "pred_ecoli": -846,
       "status": "Safe",
       "drivers": {
-        "flow": -115.0,
-        "gage": 4.142,
-        "sindoy": -0.8757634148133603,
-        "flow_rating": "Extremely lower than average",
+        "flow": 242.2,
+        "gage": 3.608,
+        "sindoy": -0.8673240759482688,
+        "flow_rating": "Average",
         "flow_stats": {
-          "low": 31.0,
-          "p25": 166.0,
-          "median": 822.0,
-          "mean": 876.0,
-          "p75": 1620.0,
-          "high": 2270.0
+          "low": 19.4,
+          "p25": 173.0,
+          "median": 817.0,
+          "mean": 892.0,
+          "p75": 1470.0,
+          "high": 2290.0
         }
       }
     }
