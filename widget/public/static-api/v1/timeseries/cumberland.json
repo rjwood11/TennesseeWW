@@ -5,21 +5,21 @@
     {
       "id": 11,
       "site_id": "cumberland",
-      "computed_at": "2026-11-04T19:49:22.523961+00:00",
-      "pred_ecoli": 923,
+      "computed_at": "2026-11-05T06:54:16.379078+00:00",
+      "pred_ecoli": 912,
       "status": "Warning",
       "drivers": {
-        "flow": 16300.0,
-        "gage": 18.826,
-        "sindoy": -0.8673240759482688,
+        "flow": 14740.0,
+        "gage": 18.418,
+        "sindoy": -0.858627730241118,
         "flow_rating": "Higher than average",
         "flow_stats": {
-          "low": 2150.0,
-          "p25": 5450.0,
-          "median": 8730.0,
-          "mean": 8640.0,
-          "p75": 11700.0,
-          "high": 16400.0
+          "low": 2700.0,
+          "p25": 4940.0,
+          "median": 8020.0,
+          "mean": 8810.0,
+          "p75": 12300.0,
+          "high": 17400.0
         }
       }
     }

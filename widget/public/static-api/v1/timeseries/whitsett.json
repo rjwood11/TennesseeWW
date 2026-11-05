@@ -5,21 +5,21 @@
     {
       "id": 8,
       "site_id": "whitsett",
-      "computed_at": "2026-11-04T19:49:22.523961+00:00",
+      "computed_at": "2026-11-05T06:54:16.379078+00:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 1352.0,
-        "gage": 6.256,
-        "sindoy": -0.8673240759482688,
+        "flow": 617.4,
+        "gage": 4.776,
+        "sindoy": -0.858627730241118,
         "flow_rating": "Extremely higher than average",
         "flow_stats": {
           "low": 1.4,
-          "p25": 8.4,
-          "median": 23.0,
-          "mean": 52.0,
-          "p75": 55.0,
-          "high": 579.0
+          "p25": 10.0,
+          "median": 27.0,
+          "mean": 44.0,
+          "p75": 61.0,
+          "high": 164.0
         }
       }
     }
