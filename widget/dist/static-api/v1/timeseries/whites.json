@@ -5,12 +5,12 @@
     {
       "id": 10,
       "site_id": "whites",
-      "computed_at": "2026-11-05T06:54:16.379078+00:00",
+      "computed_at": "2026-11-05T20:00:11.577735+00:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 96.9,
-        "gage": 5.17,
+        "flow": 53.6,
+        "gage": 4.926,
         "sindoy": -0.858627730241118,
         "flow_rating": "Higher than average",
         "flow_stats": {
