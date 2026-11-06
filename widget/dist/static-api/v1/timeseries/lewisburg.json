@@ -5,21 +5,21 @@
     {
       "id": 4,
       "site_id": "lewisburg",
-      "computed_at": "2026-11-05T20:00:11.577735+00:00",
+      "computed_at": "2026-11-06T06:53:42.268174+00:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 455.0,
-        "gage": 5.85,
-        "sindoy": -0.858627730241118,
+        "flow": 197.4,
+        "gage": 5.112,
+        "sindoy": -0.8496769546068308,
         "flow_rating": "Higher than average",
         "flow_stats": {
-          "low": 0.54,
+          "low": 0.58,
           "p25": 10.0,
-          "median": 34.0,
-          "mean": 133.0,
-          "p75": 88.0,
-          "high": 1350.0
+          "median": 38.0,
+          "mean": 163.0,
+          "p75": 177.0,
+          "high": 1380.0
         }
       }
     }
