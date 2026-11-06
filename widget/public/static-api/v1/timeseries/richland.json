@@ -5,12 +5,12 @@
     {
       "id": 7,
       "site_id": "richland",
-      "computed_at": "2026-11-06T06:53:42.268174+00:00",
+      "computed_at": "2026-11-06T19:27:50.879044+00:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 51.96,
-        "gage": 1.228,
+        "flow": 39.54,
+        "gage": 1.124,
         "sindoy": -0.8496769546068308,
         "flow_rating": "Higher than average",
         "flow_stats": {
