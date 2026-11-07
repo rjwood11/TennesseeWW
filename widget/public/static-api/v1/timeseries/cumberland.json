@@ -5,14 +5,14 @@
     {
       "id": 11,
       "site_id": "cumberland",
-      "computed_at": "2026-11-07T06:04:38.931768+00:00",
-      "pred_ecoli": 935,
+      "computed_at": "2026-11-07T13:09:40.677571+00:00",
+      "pred_ecoli": 814,
       "status": "Warning",
       "drivers": {
-        "flow": 17980.0,
-        "gage": 17.836,
+        "flow": 536.8,
+        "gage": 16.628,
         "sindoy": -0.840474401353386,
-        "flow_rating": "Higher than average",
+        "flow_rating": "Extremely lower than average",
         "flow_stats": {
           "low": 2250.0,
           "p25": 5620.0,
