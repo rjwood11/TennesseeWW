@@ -5,21 +5,21 @@
     {
       "id": 6,
       "site_id": "moran",
-      "computed_at": "2026-11-07T21:55:02.772623+00:00",
-      "pred_ecoli": 754,
-      "status": "Warning",
+      "computed_at": "2026-11-08T06:08:33.922711+00:00",
+      "pred_ecoli": 694,
+      "status": "Caution",
       "drivers": {
-        "flow": 398.0,
-        "gage": 2.158,
-        "sindoy": -0.840474401353386,
+        "flow": 363.0,
+        "gage": 2.088,
+        "sindoy": -0.8310227973959348,
         "flow_rating": "Higher than average",
         "flow_stats": {
-          "low": 3.0,
-          "p25": 27.0,
-          "median": 84.0,
-          "mean": 345.0,
-          "p75": 292.0,
-          "high": 9980.0
+          "low": 3.6,
+          "p25": 29.0,
+          "median": 82.0,
+          "mean": 323.0,
+          "p75": 266.0,
+          "high": 3910.0
         }
       }
     }
