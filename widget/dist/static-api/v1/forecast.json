@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T06:08:33.922711Z",
+  "generated_at": "2026-11-08T13:30:32.052425Z",
   "items": [
     {
       "site": {
@@ -19,13 +19,13 @@
         "label": "Hwy100",
         "usgs_site_no": "03433500"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:30:00-06:00",
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T06:30:00-06:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 363.0,
-        "gage": 2.088,
+        "flow": 339.0,
+        "gage": 2.038,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Higher than average",
         "flow_stats": {
@@ -58,13 +58,13 @@
         "label": "Hwy70",
         "usgs_site_no": "03434500"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:00:00-06:00",
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T06:00:00-06:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 667.6,
-        "gage": 2.208,
+        "flow": 604.8,
+        "gage": 2.062,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Higher than average",
         "flow_stats": {
@@ -97,13 +97,13 @@
         "label": "JBlvd",
         "usgs_site_no": "03431700"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:45:00-06:00",
-      "pred_ecoli": 554,
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T06:45:00-06:00",
+      "pred_ecoli": 543,
       "status": "Caution",
       "drivers": {
-        "flow": 26.36,
-        "gage": 0.994,
+        "flow": 24.62,
+        "gage": 0.974,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Higher than average",
         "flow_stats": {
@@ -136,13 +136,13 @@
         "label": "LPike",
         "usgs_site_no": "03432350"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:15:00-06:00",
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T06:15:00-06:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 5.698,
-        "gage": 4.072,
+        "flow": 4.354,
+        "gage": 4.012,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Lower than average",
         "flow_stats": {
@@ -175,13 +175,13 @@
         "label": "MCreek",
         "usgs_site_no": "03431060"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:00:00-06:00",
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T07:00:00-06:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 28.1,
-        "gage": 2.94,
+        "flow": 24.5,
+        "gage": 2.9,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Average",
         "flow_stats": {
@@ -214,13 +214,13 @@
         "label": "Hwy100",
         "usgs_site_no": "03433500"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:30:00-06:00",
-      "pred_ecoli": 694,
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T06:30:00-06:00",
+      "pred_ecoli": 655,
       "status": "Caution",
       "drivers": {
-        "flow": 363.0,
-        "gage": 2.088,
+        "flow": 339.0,
+        "gage": 2.038,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Higher than average",
         "flow_stats": {
@@ -253,13 +253,13 @@
         "label": "JBlvd",
         "usgs_site_no": "03431700"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:45:00-06:00",
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T06:45:00-06:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 26.36,
-        "gage": 0.994,
+        "flow": 24.62,
+        "gage": 0.974,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Higher than average",
         "flow_stats": {
@@ -292,13 +292,13 @@
         "label": "MCreek",
         "usgs_site_no": "03431060"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:00:00-06:00",
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T07:00:00-06:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 28.1,
-        "gage": 2.94,
+        "flow": 24.5,
+        "gage": 2.9,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Average",
         "flow_stats": {
@@ -331,13 +331,13 @@
         "label": "Browns",
         "usgs_site_no": "03431300"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:00:00-06:00",
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T07:00:00-06:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 11.92,
-        "gage": 1.938,
+        "flow": 10.72,
+        "gage": 1.908,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Average",
         "flow_stats": {
@@ -370,13 +370,13 @@
         "label": "Whites",
         "usgs_site_no": "03431599"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:30:00-06:00",
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T06:30:00-06:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 11.56,
-        "gage": 4.592,
+        "flow": 10.6,
+        "gage": 4.58,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Average",
         "flow_stats": {
@@ -409,15 +409,15 @@
         "label": "Cumberland",
         "usgs_site_no": "03431500"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:30:00-06:00",
-      "pred_ecoli": 865,
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T06:30:00-06:00",
+      "pred_ecoli": 793,
       "status": "Warning",
       "drivers": {
-        "flow": 7846.0,
-        "gage": 16.318,
+        "flow": -2584.0,
+        "gage": 16.36,
         "sindoy": -0.8310227973959348,
-        "flow_rating": "Average",
+        "flow_rating": "Extremely lower than average",
         "flow_stats": {
           "low": 2000.0,
           "p25": 5290.0,
@@ -448,15 +448,15 @@
         "label": "Stones",
         "usgs_site_no": "03430200"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:00:00-06:00",
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T07:00:00-06:00",
       "pred_ecoli": -849,
       "status": "Safe",
       "drivers": {
-        "flow": 113.62,
-        "gage": 2.45,
+        "flow": 108.3,
+        "gage": 2.054,
         "sindoy": -0.8310227973959348,
-        "flow_rating": "Lower than average",
+        "flow_rating": "Extremely lower than average",
         "flow_stats": {
           "low": 111.0,
           "p25": 174.0,
@@ -487,13 +487,13 @@
         "label": "Duck",
         "usgs_site_no": "03601990"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:00:00-06:00",
-      "pred_ecoli": 598,
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T07:00:00-06:00",
+      "pred_ecoli": 535,
       "status": "Caution",
       "drivers": {
-        "flow": 1804.0,
-        "gage": 5.29,
+        "flow": 1534.0,
+        "gage": 4.95,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Average",
         "flow_stats": {
@@ -526,13 +526,13 @@
         "label": "Hwy100",
         "usgs_site_no": "03433500"
       },
-      "computed_at": "2026-11-08T06:08:33.922711Z",
-      "observed_at_usgs": "2026-11-07T23:30:00-06:00",
-      "pred_ecoli": 665,
+      "computed_at": "2026-11-08T13:30:32.052425Z",
+      "observed_at_usgs": "2026-11-08T06:30:00-06:00",
+      "pred_ecoli": 621,
       "status": "Caution",
       "drivers": {
-        "flow": 363.0,
-        "gage": 2.088,
+        "flow": 339.0,
+        "gage": 2.038,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Higher than average",
         "flow_stats": {

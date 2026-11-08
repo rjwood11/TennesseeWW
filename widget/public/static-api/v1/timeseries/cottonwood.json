@@ -5,12 +5,12 @@
     {
       "id": 14,
       "site_id": "cottonwood",
-      "computed_at": "2026-11-08T06:08:33.922711+00:00",
-      "pred_ecoli": 665,
+      "computed_at": "2026-11-08T13:30:32.052425+00:00",
+      "pred_ecoli": 621,
       "status": "Caution",
       "drivers": {
-        "flow": 363.0,
-        "gage": 2.088,
+        "flow": 339.0,
+        "gage": 2.038,
         "sindoy": -0.8310227973959348,
         "flow_rating": "Higher than average",
         "flow_stats": {
