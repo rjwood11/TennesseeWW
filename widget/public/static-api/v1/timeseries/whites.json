@@ -5,21 +5,21 @@
     {
       "id": 10,
       "site_id": "whites",
-      "computed_at": "2026-11-08T22:11:07.045268+00:00",
+      "computed_at": "2026-11-09T06:42:24.681361+00:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 9.94,
-        "gage": 4.57,
-        "sindoy": -0.8310227973959348,
+        "flow": 8.362,
+        "gage": 4.546,
+        "sindoy": -0.8213249434486963,
         "flow_rating": "Average",
         "flow_stats": {
-          "low": 2.0,
-          "p25": 4.7,
-          "median": 9.9,
-          "mean": 38.0,
-          "p75": 40.0,
-          "high": 278.0
+          "low": 2.4,
+          "p25": 4.6,
+          "median": 9.7,
+          "mean": 33.0,
+          "p75": 30.0,
+          "high": 338.0
         }
       }
     }

@@ -5,21 +5,21 @@
     {
       "id": 5,
       "site_id": "millgreenway",
-      "computed_at": "2026-11-08T22:11:07.045268+00:00",
+      "computed_at": "2026-11-09T06:42:24.681361+00:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 20.46,
-        "gage": 2.848,
-        "sindoy": -0.8310227973959348,
+        "flow": 18.22,
+        "gage": 2.816,
+        "sindoy": -0.8213249434486963,
         "flow_rating": "Average",
         "flow_stats": {
-          "low": 3.48,
+          "low": 3.67,
           "p25": 13.0,
-          "median": 36.0,
-          "mean": 90.0,
-          "p75": 105.0,
-          "high": 609.0
+          "median": 30.0,
+          "mean": 126.0,
+          "p75": 80.0,
+          "high": 2000.0
         }
       }
     }

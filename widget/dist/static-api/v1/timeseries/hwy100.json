@@ -5,21 +5,21 @@
     {
       "id": 1,
       "site_id": "hwy100",
-      "computed_at": "2026-11-08T22:11:07.045268+00:00",
+      "computed_at": "2026-11-09T06:42:24.681361+00:00",
       "pred_ecoli": null,
       "status": "NoData",
       "drivers": {
-        "flow": 296.2,
-        "gage": 1.944,
-        "sindoy": -0.8310227973959348,
-        "flow_rating": "Higher than average",
+        "flow": 274.0,
+        "gage": 1.894,
+        "sindoy": -0.8213249434486963,
+        "flow_rating": "Average",
         "flow_stats": {
-          "low": 3.6,
-          "p25": 29.0,
-          "median": 82.0,
-          "mean": 323.0,
-          "p75": 266.0,
-          "high": 3910.0
+          "low": 4.2,
+          "p25": 31.0,
+          "median": 80.0,
+          "mean": 343.0,
+          "p75": 281.0,
+          "high": 7660.0
         }
       }
     }
