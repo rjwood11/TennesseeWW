@@ -55,7 +55,7 @@ Use scheduled GitHub Actions + GitHub Pages:
 - Guide: `docs/GITHUB_PAGES.md`
 
 ## Easy Model Update Workflow
-If you make a small math change to an E. coli model and want it to go live on GitHub and GitHub Pages, use this process.
+If you make a small math change to an *E. coli* model and want it to go live on GitHub and GitHub Pages, use this process.
 
 ### Which command should I use?
 Use:
@@ -73,7 +73,7 @@ Edit:
 
 - `config/models.yaml`
 
-That is where the E. coli model math lives.
+That is where the *E. coli* model math lives.
 
 ### Step-by-step for a small model change
 1. Open `config/models.yaml`.

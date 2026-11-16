@@ -72,7 +72,7 @@ export default function Disclaimer({ apiBase, items }: Props) {
     <div className="tnww-disclaimer">
       <span>Conditions are model-based screening guidance and not a substitute for direct sampling.</span>
       <button type="button" className="tnww-disclaimer-action" onClick={handleDownload} disabled={isDownloading}>
-        {isDownloading ? "Preparing CSV..." : "Download Measured E. coli CSV"}
+        {isDownloading ? "Preparing CSV..." : <>Download Measured <em>E. coli</em> CSV</>}
       </button>
       <a className="tnww-disclaimer-action" href="https://github.com/rjwood11/TennesseeWW" target="_blank" rel="noreferrer">
         Methodology
