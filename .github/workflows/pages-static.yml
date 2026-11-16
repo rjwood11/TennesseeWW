@@ -55,7 +55,7 @@ jobs:
           TNWW_TIMEZONE: America/Chicago
           TNWW_OPENMETEO_LAT: "36.0598"
           TNWW_OPENMETEO_LON: "-86.8291"
-        run: python api/scripts/export_static_api.py --output-dir widget/public/static-api
+        run: python api/scripts/export_static_api.py --output-dir widget/public/static-api --allow-empty-predictions
 
       - name: Install widget deps
         working-directory: widget
